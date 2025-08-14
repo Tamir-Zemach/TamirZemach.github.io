@@ -2480,3 +2480,31 @@ li::marker {
     content: none; /* Hides the marker */
     display: none; /* Ensures it doesn't take up space */
 }
+
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #161616;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  max-width: 500px;
+}
+
+#popup.show {
+  display: block;
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  #popup {
+    width: 90%;
+    padding: 1.5em;
+  }
+}

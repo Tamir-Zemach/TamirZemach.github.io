@@ -151,21 +151,21 @@
 			</header>
 			<div class="row">
 				<div class="col-12">
-					<form method="post" action="#tamirzwork@gmail.com">
+					<form id="contact-form">
 						<div class="row">
 							<div class="col-6 col-12-small">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="col-6 col-12-small">
-								<input type="text" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<input type="text" name="subject" id="subject" placeholder="Subject" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
-							</div>
-							<div class="col-12">
+								<input type="text" name="name" id="name" placeholder="Name" required />
+									</div>
+										<div class="col-6 col-12-small">
+											<input type="email" name="email" id="email" placeholder="Email" required />
+												</div>
+													<div class="col-12">
+													<input type="text" name="subject" id="subject" placeholder="Subject" />
+													</div>
+												<div class="col-12">
+												<textarea name="message" id="message" placeholder="Message" required></textarea>
+										</div>
+									<div class="col-12">
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
 									<li><input type="reset" value="Clear" class="alt" /></li>
@@ -173,6 +173,11 @@
 							</div>
 						</div>
 					</form>
+						<div id="popup">
+								<h3>✅ Message Sent!</h3>
+									<p>Thanks for reaching out. I'll get back to you soon.</p>
+								<button onclick="document.getElementById('popup').classList.remove('show')">Close</button>
+						</div>
 				</div>
 				<div class="col-12">
 					<hr />
