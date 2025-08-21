@@ -1530,9 +1530,9 @@ input, select, textarea {
 		padding: 0.75em;
 		font-size: 1em;
 		border-radius: 8px;
-		border: solid 1px #ddd;
-		background: #fff;
-		color: #bbb;
+		border: 1px solid #444;
+		background: #2a2a2a; 
+		color: #eee;         
 		box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
 		width: 100%;
 	}
@@ -2507,4 +2507,10 @@ li::marker {
     width: 90%;
     padding: 1.5em;
   }
+}
+
+.form-subtext {
+	color: #3e3e3e; /* Matches your form label color */
+	font-weight: 700;
+	margin-bottom: 0.5em;
 }
