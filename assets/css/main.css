@@ -2514,3 +2514,54 @@ li::marker {
 	font-weight: 700;
 	margin-bottom: 0.5em;
 }
+
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Modal content box */
+.modal-content {
+    background: #1c1c1c; /* match your dark theme */
+    color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* Close button */
+.modal-close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+.modal-close:hover {
+    color: #fff;
+}
+
+/* Media inside modal */
+#modalMedia video, #modalMedia img {
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 736px) {
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 15px;
+    }
+}

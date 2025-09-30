@@ -58,3 +58,30 @@
 
 })(jQuery);
 
+// Modal logic
+document.querySelectorAll('.box.style2').forEach(project => {
+    project.addEventListener('click', () => {
+        const title = project.querySelector('h3').innerText;
+        const description = project.querySelector('p').innerText;
+        const video = project.querySelector('video')?.outerHTML || '';
+
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalDescription').innerText = description;
+        document.getElementById('modalMedia').innerHTML = video;
+
+        document.getElementById('projectModal').style.display = 'block';
+    });
+});
+
+// Close modal
+document.querySelector('.modal-close').addEventListener('click', () => {
+    document.getElementById('projectModal').style.display = 'none';
+});
+
+// Close when clicking outside content
+window.addEventListener('click', (e) => {
+    if (e.target.id === 'projectModal') {
+        document.getElementById('projectModal').style.display = 'none';
+    }
+});
+
