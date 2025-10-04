@@ -95,46 +95,53 @@ window.addEventListener('DOMContentLoaded', () => {
                 box.className = 'modal-media-box';
 
                 box.innerHTML = `
-          <video src="${m.video}" autoplay loop muted controls style="width:100%;border-radius:6px;"></video>
-          <p>${m.text}</p>
-        `;
+                    <video src="${m.video}" autoplay loop muted controls style="width:100%;border-radius:6px;"></video>
+                    <p>${m.text}</p>
+                `;
 
-                if (m.snippet) {
-                    const button = document.createElement('button');
-                    button.className = 'snippet-toggle';
-                    button.textContent = `${m.snippet.title} ▼`;
+                if (m.snippets && Array.isArray(m.snippets)) {
+                    const buttonGroup = document.createElement('div');
+                    buttonGroup.className = 'snippet-group';
 
-                    const pre = document.createElement('pre');
-                    pre.className = 'snippet-content';
-                    pre.style.display = 'none';
-                    pre.textContent = 'Loading...';
+                    m.snippets.forEach(snippet => {
+                        const button = document.createElement('button');
+                        button.className = 'snippet-toggle';
+                        button.textContent = `${snippet.title} ▼`;
 
-                    button.addEventListener('click', () => {
-                        const isVisible = pre.style.display === 'block';
-                        pre.style.display = isVisible ? 'none' : 'block';
-                        button.textContent = `${m.snippet.title} ${isVisible ? '▼' : '▲'}`;
+                        const pre = document.createElement('pre');
+                        pre.className = 'snippet-content';
+                        pre.style.display = 'none';
+                        pre.textContent = 'Loading...';
 
-                        if (!pre.dataset.loaded) {
-                            fetch(m.snippet.url)
-                                .then(res => res.text())
-                                .then(code => {
-                                    pre.textContent = code;
-                                    pre.dataset.loaded = true;
-                                })
-                                .catch(() => {
-                                    pre.textContent = 'Failed to load script.';
-                                });
-                        }
+                        button.addEventListener('click', () => {
+                            const isVisible = pre.style.display === 'block';
+                            pre.style.display = isVisible ? 'none' : 'block';
+                            button.textContent = `${snippet.title} ${isVisible ? '▼' : '▲'}`;
+
+                            if (!pre.dataset.loaded) {
+                                fetch(snippet.url)
+                                    .then(res => res.text())
+                                    .then(code => {
+                                        pre.textContent = code;
+                                        pre.dataset.loaded = true;
+                                    })
+                                    .catch(() => {
+                                        pre.textContent = 'Failed to load script.';
+                                    });
+                            }
+                        });
+
+                        buttonGroup.appendChild(button);
+                        buttonGroup.appendChild(pre);
                     });
 
-                    box.appendChild(button);
-                    box.appendChild(pre);
+                    box.appendChild(buttonGroup);
                 }
 
                 modalMedia.appendChild(box);
             });
-            const links = JSON.parse(card.dataset.links || '[]');
 
+            const links = JSON.parse(card.dataset.links || '[]');
             if (links.length > 0) {
                 const linkBox = document.createElement('div');
                 linkBox.className = 'modal-links';
@@ -149,6 +156,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 modalMedia.appendChild(linkBox);
             }
+
             modal.style.display = 'block';
         });
     });

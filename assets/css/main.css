@@ -2591,6 +2591,12 @@ li::marker {
     color: #ddd;
     border-color: #666;
 }
+.snippet-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
 
 /* Mobile adjustments */
 @media (max-width: 736px) {
