@@ -120,12 +120,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
                             if (!pre.dataset.loaded) {
                                 fetch(snippet.url)
-                                    .then(res => res.text())
+                                    .then(res => {
+                                        console.log("Fetch status:", res.status, snippet.url);
+                                        return res.text();
+                                    })
                                     .then(code => {
                                         pre.textContent = code;
                                         pre.dataset.loaded = true;
                                     })
-                                    .catch(() => {
+                                    .catch(err => {
+                                        console.error("Fetch failed:", err);
                                         pre.textContent = 'Failed to load script.';
                                     });
                             }
