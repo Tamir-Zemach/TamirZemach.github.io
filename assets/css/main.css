@@ -2576,31 +2576,66 @@ li::marker {
     color: #61b89e;
 }
 
+/* Snippet button row */
+.snippet-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+/* Individual buttons */
 .snippet-toggle {
-    width: auto !important;
-    text-align: left !important;
-    padding: 8px 12px !important;
-    font-size: 0.9em !important;
+    width: 180px;
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 0.9em;
     background-color: transparent;
     color: #aaa;
     border: 1px solid #444;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .snippet-toggle:hover {
-    color: #ddd;
+    color: #fff;
     border-color: #666;
 }
-.snippet-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+.snippet-toggle.active {
+    background-color: #1e90ff; /* bright blue */
+    color: #fff;
+    border-color: #1e90ff;
 }
 
+/* Shared code panel */
+.snippet-content {
+    margin-top: 15px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    background: #222;
+    color: #eee;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    padding: 0;
+}
+
+/* Open state */
+.snippet-content.open {
+    max-height: 500px;
+    padding: 1em;
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+}
 /* Mobile adjustments */
 @media (max-width: 736px) {
     .modal-content {
@@ -2648,35 +2683,5 @@ li::marker {
         margin-top: 30px;
     }
 
-    .snippet-box {
-        margin-bottom: 15px;
-        background: #2a2a2a;
-        padding: 10px;
-        border-radius: 6px;
-    }
 
-    .snippet-toggle {
-        background: none;
-        border: none;
-        color: #61b89e;
-        font-size: 1em;
-        cursor: pointer;
-        text-align: left;
-        width: 100%;
-    }
-
-    .snippet-toggle:hover {
-        color: #fff;
-    }
-
-    .snippet-content {
-        display: none;
-        background: #1c1c1c;
-        color: #ccc;
-        padding: 10px;
-        border-radius: 6px;
-        font-family: monospace;
-        white-space: pre-wrap;
-        overflow-x: auto;
-    }
 }

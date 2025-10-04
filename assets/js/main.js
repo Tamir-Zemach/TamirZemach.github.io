@@ -69,22 +69,17 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // // Toggle snippet visibility (for dynamically created buttons)
-    // document.addEventListener('click', (e) => {
-    //     if (e.target.classList.contains('snippet-toggle')) {
-    //         const content = e.target.nextElementSibling;
-    //         const isVisible = content.style.display === 'block';
-    //         content.style.display = isVisible ? 'none' : 'block';
-    //         e.target.textContent = e.target.textContent.replace(isVisible ? '▲' : '▼', isVisible ? '▼' : '▲');
-    //     }
-    // });
-
     // Project card click
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', () => {
             const title = card.dataset.title || card.querySelector('h3').innerText;
             const description = card.dataset.description || card.querySelector('p').innerText;
-            const mechanics = JSON.parse(card.dataset.mechanics || '[]');
+            let mechanics = [];
+            try {
+                mechanics = JSON.parse(card.dataset.mechanics);
+            } catch (err) {
+                console.error('Invalid mechanics JSON:', err);
+            }
 
             modalTitle.textContent = title;
             modalDescription.textContent = description;
@@ -106,40 +101,18 @@ window.addEventListener('DOMContentLoaded', () => {
                     m.snippets.forEach(snippet => {
                         const button = document.createElement('button');
                         button.className = 'snippet-toggle';
-                        button.textContent = `${snippet.title} ▼`;
-
-                        const pre = document.createElement('pre');
-                        pre.className = 'snippet-content';
-                        pre.style.display = 'none';   // start hidden
-                        pre.textContent = 'Loading...';
-
-                        button.addEventListener('click', () => {
-                            const isVisible = pre.style.display === 'block';
-                            pre.style.display = isVisible ? 'none' : 'block';
-                            button.textContent = `${snippet.title} ${isVisible ? '▼' : '▲'}`;
-
-                            if (!pre.dataset.loaded) {
-                                fetch(snippet.url)
-                                    .then(res => {
-                                        console.log("Fetch status:", res.status, snippet.url);
-                                        return res.text();
-                                    })
-                                    .then(code => {
-                                        pre.textContent = code;
-                                        pre.dataset.loaded = true;
-                                    })
-                                    .catch(err => {
-                                        console.error("Fetch failed:", err);
-                                        pre.textContent = 'Failed to load script.';
-                                    });
-                            }
-                        });
-
+                        button.textContent = snippet.title;
+                        button.dataset.url = snippet.url;
                         buttonGroup.appendChild(button);
-                        buttonGroup.appendChild(pre);
                     });
 
+                    const sharedPre = document.createElement('pre');
+                    sharedPre.id = 'snippetContent';
+                    sharedPre.className = 'snippet-content';
+                    sharedPre.dataset.active = '';
+
                     box.appendChild(buttonGroup);
+                    box.appendChild(sharedPre);
                 }
 
                 modalMedia.appendChild(box);
@@ -163,5 +136,42 @@ window.addEventListener('DOMContentLoaded', () => {
 
             modal.style.display = 'block';
         });
+    });
+    document.addEventListener('click', (e) => {
+        const button = e.target.closest('.snippet-toggle');
+        if (!button) return;
+
+        const pre = button.parentElement.nextElementSibling;
+        const isOpen = pre.classList.contains('open') && pre.dataset.active === button.textContent;
+
+        // Remove active class from all buttons in this group
+        button.parentElement.querySelectorAll('.snippet-toggle').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        if (isOpen) {
+            pre.classList.remove('open');
+            pre.style.maxHeight = '0';
+            pre.textContent = '';
+            pre.dataset.active = '';
+            return;
+        }
+
+        // Mark this button as active
+        button.classList.add('active');
+
+        pre.classList.add('open');
+        pre.textContent = 'Loading...';
+        pre.dataset.active = button.textContent;
+
+        fetch(button.dataset.url)
+            .then(res => res.text())
+            .then(code => {
+                pre.textContent = code;
+                pre.style.maxHeight = pre.scrollHeight + 'px';
+            })
+            .catch(() => {
+                pre.textContent = 'Failed to load script.';
+            });
     });
 });
