@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                         const pre = document.createElement('pre');
                         pre.className = 'snippet-content';
-                        pre.style.display = 'none';   // start hidden
+                        pre.style.display = 'block'; // instead of 'none'
                         pre.textContent = 'Loading...';
 
                         button.addEventListener('click', () => {
