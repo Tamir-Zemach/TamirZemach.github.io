@@ -69,15 +69,15 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle snippet visibility (for dynamically created buttons)
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('snippet-toggle')) {
-            const content = e.target.nextElementSibling;
-            const isVisible = content.style.display === 'block';
-            content.style.display = isVisible ? 'none' : 'block';
-            e.target.textContent = e.target.textContent.replace(isVisible ? '▲' : '▼', isVisible ? '▼' : '▲');
-        }
-    });
+    // // Toggle snippet visibility (for dynamically created buttons)
+    // document.addEventListener('click', (e) => {
+    //     if (e.target.classList.contains('snippet-toggle')) {
+    //         const content = e.target.nextElementSibling;
+    //         const isVisible = content.style.display === 'block';
+    //         content.style.display = isVisible ? 'none' : 'block';
+    //         e.target.textContent = e.target.textContent.replace(isVisible ? '▲' : '▼', isVisible ? '▼' : '▲');
+    //     }
+    // });
 
     // Project card click
     document.querySelectorAll('.project-card').forEach(card => {
