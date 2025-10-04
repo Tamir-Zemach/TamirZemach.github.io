@@ -109,20 +109,33 @@
                     <article class="box style2 project-card"
                              data-title="Screw Man"
                              data-description="2D, Platformer, Action"
-                             data-video="Videos/ScrewManGameplayAndAnimations.mp4">
-
-                    <a class="image featured">
-							<img src="images/Screwman ThumbNail.jpg" alt="" id="hoverMedia" />
-							<video src="Videos/ScrewManGameplayAndAnimations.mp4" id="hoverVideo" muted loop preload="metadata"></video>
-						</a>
-						<h3><a href="https://play.unity.com/en/games/e7555e0c-ba1b-4720-87ea-e35a9e1ad7f6/screw-man" target="_blank">Screw Man</a></h3>
-						<p>2D, Platformer, Action</p>
-						<li>
-							<a href="https://play.unity.com/en/games/e7555e0c-ba1b-4720-87ea-e35a9e1ad7f6/screw-man" class="icon brands fa-unity" target="_blank"><span class="label">Unity</span></a>
-							<a href="https://www.youtube.com/watch?v=0DH8596xPXo" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a>
-							<a href="https://github.com/Tamir-Zemach/ScrewMan" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a>
-						</li>
-					</article>
+                             data-mechanics='[
+           {
+             "video": "Videos/DashMechanic.gif",
+             "text": "Dash mechanic: allows the player to burst forward mid-air.",
+             "snippet": {
+               "title": "DashFunctions.cs",
+               "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Player/DashFunctions.cs"
+             }
+           },
+           {
+             "video": "Videos/WallClimb.gif",
+             "text": "Wall climb: lets the player scale vertical surfaces.",
+             "snippet": {
+               "title": "WallClimb.cs",
+               "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Player/WallClimb.cs"
+             }
+           }
+         ]'
+                             data-links='[
+           { "label": "Unity", "url": "https://play.unity.com/en/games/e7555e0c-ba1b-4720-87ea-e35a9e1ad7f6/screw-man", "icon": "unity" },
+           { "label": "YouTube", "url": "https://www.youtube.com/watch?v=0DH8596xPXo", "icon": "youtube" },
+           { "label": "GitHub", "url": "https://github.com/Tamir-Zemach/ScrewMan", "icon": "github" }
+         ]'>
+                        <a class="image featured">
+                            <img src="images/Screwman%20ThumbNail.jpg" alt="Screw Man Thumbnail" />
+                        </a>
+                        <h3>Screw Man</h3>
 				</div>
 				<div class="col-4 col-6-medium col-12-small">
 					<article class="box style2">
@@ -221,24 +234,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script> document.querySelectorAll('.image').forEach(function (element) {
-			element.addEventListener('mouseover', function () {
-				let video = element.querySelector('video');
-				if (video) { // Check if the video exists
-					let randomTime = Math.random() * video.duration;
-					video.currentTime = randomTime;
-					video.play();
-				}
-			});
 
-			element.addEventListener('mouseleave', function () {
-				let video = element.querySelector('video');
-				if (video) { // Check if the video exists
-					video.pause();
-					video.currentTime = 0;
-				}
-			});
-		});</script>
 
     <!-- Reusable Modal -->
     <div id="projectModal" class="modal">
@@ -249,49 +245,6 @@
             <div id="modalMedia"></div>
         </div>
     </div>
-    <script>
-        // Modal logic
-        const modal = document.getElementById('projectModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDescription = document.getElementById('modalDescription');
-        const modalMedia = document.getElementById('modalMedia');
-        const modalClose = document.querySelector('.modal-close');
-
-        // Attach click events to each project card
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.dataset.title;
-                const description = card.dataset.description;
-                const videoSrc = card.dataset.video;
-
-                modalTitle.textContent = title;
-                modalDescription.textContent = description;
-
-                // Insert video dynamically
-                if (videoSrc) {
-                    modalMedia.innerHTML = `<video src="${videoSrc}" controls autoplay loop muted style="width:100%; border-radius:6px;"></video>`;
-                } else {
-                    modalMedia.innerHTML = '';
-                }
-
-                modal.style.display = 'block';
-            });
-        });
-
-        // Close modal
-        modalClose.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modalMedia.innerHTML = ''; // clear video so it stops playing
-        });
-
-        // Close when clicking outside content
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                modalMedia.innerHTML = '';
-            }
-        });
-    </script>
 </body>
 
 </html>

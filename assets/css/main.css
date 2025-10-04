@@ -2556,6 +2556,41 @@ li::marker {
     border-radius: 6px;
     margin-top: 15px;
 }
+.modal-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px; /* adds space above the links */
+    padding-bottom: 10px;
+}
+
+
+.modal-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.2s ease;
+}
+
+.modal-links a:hover {
+    color: #61b89e;
+}
+
+.snippet-toggle {
+    background-color: transparent;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.snippet-toggle:hover {
+    color: #ddd;
+    border-color: #666;
+}
 
 /* Mobile adjustments */
 @media (max-width: 736px) {
@@ -2563,5 +2598,75 @@ li::marker {
         margin: 10% auto;
         width: 95%;
         padding: 15px;
+    }
+
+    .modal-media-box {
+        background: #2a2a2a;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .modal-media-box video {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .modal-media-box p {
+        margin-top: 10px;
+        font-size: 0.95em;
+        color: #ccc;
+    }
+
+    .modal-links {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .modal-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+
+    .modal-links a:hover {
+        color: #61b89e;
+    }
+    .modal-snippets {
+        margin-top: 30px;
+    }
+
+    .snippet-box {
+        margin-bottom: 15px;
+        background: #2a2a2a;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .snippet-toggle {
+        background: none;
+        border: none;
+        color: #61b89e;
+        font-size: 1em;
+        cursor: pointer;
+        text-align: left;
+        width: 100%;
+    }
+
+    .snippet-toggle:hover {
+        color: #fff;
+    }
+
+    .snippet-content {
+        background: #1c1c1c;
+        color: #ccc;
+        padding: 10px;
+        border-radius: 6px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        overflow-x: auto;
     }
 }

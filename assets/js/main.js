@@ -1,49 +1,39 @@
-/*
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-(function($) {
-
-    var $window = $(window),
+(function ($) {
+    const $window = $(window),
         $body = $('body'),
         $nav = $('#nav');
 
-    // Breakpoints.
+    // Breakpoints
     breakpoints({
-        xlarge: [ '1281px', '1680px' ],
-        large: [ '981px', '1280px' ],
-        medium: [ '737px', '980px' ],
-        small: [ null, '736px' ],
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: [null, '736px'],
     });
 
-    // Play initial animations on page load.
-    $window.on('load', function() {
-        window.setTimeout(function() {
+    // Initial animation
+    $window.on('load', function () {
+        window.setTimeout(() => {
             $body.removeClass('is-preload');
         }, 100);
     });
 
-    // Scrolly.
+    // Scrolly
     $('#nav a, .scrolly').scrolly({
         speed: 1000,
-        offset: function() { return $nav.height(); }
+        offset: () => $nav.height()
     });
 
     // Formspree AJAX submission
-    $('#contact-form').on('submit', function(e) {
+    $('#contact-form').on('submit', function (e) {
         e.preventDefault();
-
         const form = e.target;
         const data = new FormData(form);
 
         fetch('https://formspree.io/f/mjkozwkz', {
             method: 'POST',
             body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
         }).then(response => {
             if (response.ok) {
                 form.reset();
@@ -53,35 +43,113 @@
             }
         });
     });
-	
-
-
 })(jQuery);
 
 // Modal logic
-document.querySelectorAll('.box.style2').forEach(project => {
-    project.addEventListener('click', () => {
-        const title = project.querySelector('h3').innerText;
-        const description = project.querySelector('p').innerText;
-        const video = project.querySelector('video')?.outerHTML || '';
+window.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalMedia = document.getElementById('modalMedia');
+    const modalClose = document.querySelector('.modal-close');
 
-        document.getElementById('modalTitle').innerText = title;
-        document.getElementById('modalDescription').innerText = description;
-        document.getElementById('modalMedia').innerHTML = video;
+    // Close modal
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalMedia.innerHTML = '';
+        });
+    }
 
-        document.getElementById('projectModal').style.display = 'block';
+    // Close when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            modalMedia.innerHTML = '';
+        }
+    });
+
+    // Toggle snippet visibility
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('snippet-toggle')) {
+            const content = e.target.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+            content.style.display = isVisible ? 'none' : 'block';
+            e.target.textContent = e.target.textContent.replace(isVisible ? '▲' : '▼', isVisible ? '▼' : '▲');
+        }
+    });
+
+    // Project card click
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.dataset.title || card.querySelector('h3').innerText;
+            const description = card.dataset.description || card.querySelector('p').innerText;
+            const mechanics = JSON.parse(card.dataset.mechanics || '[]');
+
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalMedia.innerHTML = '';
+
+            mechanics.forEach(m => {
+                const box = document.createElement('div');
+                box.className = 'modal-media-box';
+
+                box.innerHTML = `
+          <video src="${m.video}" autoplay loop muted controls style="width:100%;border-radius:6px;"></video>
+          <p>${m.text}</p>
+        `;
+
+                if (m.snippet) {
+                    const button = document.createElement('button');
+                    button.className = 'snippet-toggle';
+                    button.textContent = `${m.snippet.title} ▼`;
+
+                    const pre = document.createElement('pre');
+                    pre.className = 'snippet-content';
+                    pre.style.display = 'none';
+                    pre.textContent = 'Loading...';
+
+                    button.addEventListener('click', () => {
+                        const isVisible = pre.style.display === 'block';
+                        pre.style.display = isVisible ? 'none' : 'block';
+                        button.textContent = `${m.snippet.title} ${isVisible ? '▼' : '▲'}`;
+
+                        if (!pre.dataset.loaded) {
+                            fetch(m.snippet.url)
+                                .then(res => res.text())
+                                .then(code => {
+                                    pre.textContent = code;
+                                    pre.dataset.loaded = true;
+                                })
+                                .catch(() => {
+                                    pre.textContent = 'Failed to load script.';
+                                });
+                        }
+                    });
+
+                    box.appendChild(button);
+                    box.appendChild(pre);
+                }
+
+                modalMedia.appendChild(box);
+            });
+            const links = JSON.parse(card.dataset.links || '[]');
+
+            if (links.length > 0) {
+                const linkBox = document.createElement('div');
+                linkBox.className = 'modal-links';
+
+                links.forEach(link => {
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.target = '_blank';
+                    a.innerHTML = `<i class="icon brands fa-${link.icon}"></i> ${link.label}`;
+                    linkBox.appendChild(a);
+                });
+
+                modalMedia.appendChild(linkBox);
+            }
+            modal.style.display = 'block';
+        });
     });
 });
-
-// Close modal
-document.querySelector('.modal-close').addEventListener('click', () => {
-    document.getElementById('projectModal').style.display = 'none';
-});
-
-// Close when clicking outside content
-window.addEventListener('click', (e) => {
-    if (e.target.id === 'projectModal') {
-        document.getElementById('projectModal').style.display = 'none';
-    }
-});
-
