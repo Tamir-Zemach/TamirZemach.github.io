@@ -2577,14 +2577,17 @@ li::marker {
 }
 
 .snippet-toggle {
+    width: auto !important;
+    text-align: left !important;
+    padding: 8px 12px !important;
+    font-size: 0.9em !important;
     background-color: transparent;
     color: #aaa;
     border: 1px solid #444;
-    padding: 8px 12px;
-    font-size: 0.9em;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    display: inline-block;
 }
 
 .snippet-toggle:hover {
@@ -2667,6 +2670,7 @@ li::marker {
     }
 
     .snippet-content {
+        display: none;
         background: #1c1c1c;
         color: #ccc;
         padding: 10px;

@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle snippet visibility
+    // Toggle snippet visibility (for dynamically created buttons)
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('snippet-toggle')) {
             const content = e.target.nextElementSibling;
@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                         const pre = document.createElement('pre');
                         pre.className = 'snippet-content';
-                        pre.style.display = 'none';
+                        pre.style.display = 'none';   // start hidden
                         pre.textContent = 'Loading...';
 
                         button.addEventListener('click', () => {
