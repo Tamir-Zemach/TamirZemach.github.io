@@ -2630,12 +2630,56 @@ li::marker {
 
 /* Open state */
 .snippet-content.open {
-    max-height: 500px;
+    max-height: 600px;
     padding: 1em;
     overflow-y: auto;
     opacity: 1;
     visibility: visible;
 }
+
+.code-box {
+    position: relative;
+}
+
+.resize-handle {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: default;
+    z-index: 10;
+
+    /* Button-like styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 30px;
+    margin: 10px auto 0;
+    border-radius: 6px;
+    background-color: #2a2a2a; /* dark modal tone */
+    color: #aaa;
+    font-size: 16px;
+
+    border: 1px solid #444;
+    touch-action: none;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+}
+.snippet-content.open + .resize-handle:hover {
+    background-color: #1e90ff;
+    color: #fff;
+    border-color: #1e90ff;
+}
+.snippet-content.open + .resize-handle {
+    pointer-events: auto;
+    opacity: 1;
+    cursor: ns-resize;
+    color: #fff;
+    background-color: #3a3a3a;
+    border-color: #666;
+}
+
+
 /* Mobile adjustments */
 @media (max-width: 736px) {
     .modal-content {

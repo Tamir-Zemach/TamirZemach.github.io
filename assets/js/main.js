@@ -106,13 +106,88 @@ window.addEventListener('DOMContentLoaded', () => {
                         buttonGroup.appendChild(button);
                     });
 
+                    const snippetWrapper = document.createElement('div');
+                    snippetWrapper.className = 'snippet-wrapper';
+
+                    const codeBox = document.createElement('div');
+                    codeBox.className = 'code-box';
+
                     const sharedPre = document.createElement('pre');
-                    sharedPre.id = 'snippetContent';
                     sharedPre.className = 'snippet-content';
                     sharedPre.dataset.active = '';
 
+                    const resizeHandle = document.createElement('div');
+                    resizeHandle.className = 'resize-handle';
+                    resizeHandle.innerHTML = '<i class="fas fa-arrows-alt-v"></i>';
+                    codeBox.appendChild(sharedPre);
+                    codeBox.appendChild(resizeHandle); // move inside codeBox
+                    snippetWrapper.appendChild(codeBox);
+                    
                     box.appendChild(buttonGroup);
-                    box.appendChild(sharedPre);
+                    box.appendChild(snippetWrapper);
+
+                    // ✅ Bind resize for this snippet immediately
+                    const panel = sharedPre;
+                    const handle = resizeHandle;
+                    if (handle && panel) {
+                        let isDragging = false;
+                        let startY, startHeight;
+
+                        handle.addEventListener('mousedown', e => {
+                            e.preventDefault();
+                            console.log('Drag started');
+
+                            // Ensure panel is visible before resize
+                            if (!panel.classList.contains('open')) {
+                                panel.classList.add('open');
+                            }
+                            if (!panel.offsetHeight) {
+                                panel.style.height = '300px';
+                            }
+
+                            isDragging = true;
+                            startY = e.clientY;
+                            startHeight = panel.offsetHeight;
+                            document.body.style.userSelect = 'none';
+                        });
+
+                        handle.addEventListener('touchstart', e => {
+                            e.preventDefault();
+
+                            if (!panel.classList.contains('open')) {
+                                panel.classList.add('open');
+                            }
+                            if (!panel.offsetHeight) {
+                                panel.style.height = '300px';
+                            }
+
+                            isDragging = true;
+                            startY = e.touches[0].clientY;
+                            startHeight = panel.offsetHeight;
+                        });
+
+                        const stopDrag = () => {
+                            isDragging = false;
+                            document.body.style.userSelect = '';
+                        };
+
+                        window.addEventListener('mousemove', e => {
+                            if (!isDragging) return;
+                            const dy = e.clientY - startY;
+                            const next = Math.max(120, startHeight + dy); // min height safeguard
+                            panel.style.height = `${next}px`;
+                        });
+
+                        window.addEventListener('touchmove', e => {
+                            if (!isDragging) return;
+                            const dy = e.touches[0].clientY - startY;
+                            const next = Math.max(120, startHeight + dy);
+                            panel.style.height = `${next}px`;
+                        });
+
+                        window.addEventListener('mouseup', stopDrag);
+                        window.addEventListener('touchend', stopDrag);
+                    }
                 }
 
                 modalMedia.appendChild(box);
@@ -137,41 +212,44 @@ window.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'block';
         });
     });
+
+    // Toggle snippet open/close
     document.addEventListener('click', (e) => {
         const button = e.target.closest('.snippet-toggle');
         if (!button) return;
 
-        const pre = button.parentElement.nextElementSibling;
+        const snippetWrapper = button.parentElement.nextElementSibling;
+        const codeBox = snippetWrapper.querySelector('.code-box');
+        const pre = codeBox.querySelector('.snippet-content');
         const isOpen = pre.classList.contains('open') && pre.dataset.active === button.textContent;
 
-        // Remove active class from all buttons in this group
         button.parentElement.querySelectorAll('.snippet-toggle').forEach(btn => {
             btn.classList.remove('active');
         });
 
         if (isOpen) {
             pre.classList.remove('open');
-            pre.style.maxHeight = '0';
-            pre.textContent = '';
+            pre.style.height = '';
             pre.dataset.active = '';
+            pre.innerHTML = '';
             return;
         }
 
-        // Mark this button as active
         button.classList.add('active');
 
         pre.classList.add('open');
-        pre.textContent = 'Loading...';
+        pre.style.height = '300px';
         pre.dataset.active = button.textContent;
+        pre.innerHTML = 'Loading...';
 
         fetch(button.dataset.url)
             .then(res => res.text())
             .then(code => {
-                pre.textContent = code;
-                pre.style.maxHeight = pre.scrollHeight + 'px';
+                pre.innerHTML = '';
+                pre.insertAdjacentText('afterbegin', code);
             })
             .catch(() => {
-                pre.textContent = 'Failed to load script.';
+                pre.innerHTML = 'Failed to load script.';
             });
     });
 });
