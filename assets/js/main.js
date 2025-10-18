@@ -252,4 +252,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 pre.innerHTML = 'Failed to load script.';
             });
     });
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.project-card .image.featured').forEach(el => {
+            // Force Chrome to recalc layout
+            el.offsetHeight;
+        });
+    });
 });
