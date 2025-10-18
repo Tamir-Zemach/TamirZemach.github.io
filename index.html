@@ -35,63 +35,56 @@
                 <header>
                     <h1><strong>Tamir Zemach</strong></h1>
                 </header>
-                <p>Game Designer, Unity Developer, C# Programmer, 2D/3D Artist & Graphic Designer </p>
+                <p>Game Designer, Unity Developer, C# Programmer, 2D/3D Artist & Graphic Designer</p>
                 <a href="#Projects" class="button large scrolly">Projects</a>
                 <a href="#contact" class="button large scrolly">Contact me</a>
             </div>
-            <div class="row aln-center">
-                <div class="col-12">
-                    <section class="box style1" style="horiz-align: center">
-                        <div class="skills-icons"
-                             style="display: flex; justify-content: center; align-items: flex-start; gap: 3em; flex-wrap: wrap;">
+        </div>
 
-                            <!-- C# -->
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <img src="assets/css/images/CSharpLogo.png" alt="C#" style="height: 70px;">
-                                <span style="margin-top: 0.5em; font-size: 1.1em;">C#</span>
-                            </div>
+        <!-- Skills section sits on its own row -->
+        <section class="box style1">
+            <div class="skills-icons">
+                <!-- C# -->
+                <div>
+                    <img src="assets/css/images/CSharpLogo.png" alt="C#" style="height: 70px;">
+                    <span style="margin-top: 0.5em; font-size: 1.1em;">C#</span>
+                </div>
 
-                            <!-- Unity -->
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <span class="fa-brands fa-unity" style="font-size: 70px;"></span>
-                                <span style="margin-top: 0.5em; font-size: 1.1em;">Unity</span>
-                            </div>
+                <!-- Unity -->
+                <div>
+                    <span class="fa-brands fa-unity" style="font-size: 70px;"></span>
+                    <span style="margin-top: 0.5em; font-size: 1.1em;">Unity</span>
+                </div>
 
-                            <!-- GitKraken -->
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <span class="fa-brands fa-gitkraken" style="font-size: 70px; color: #61b89e;"></span>
-                                <span style="margin-top: 0.5em; font-size: 1.1em;">GitKraken</span>
-                            </div>
+                <!-- GitKraken -->
+                <div>
+                    <span class="fa-brands fa-gitkraken" style="font-size: 70px; color: #61b89e;"></span>
+                    <span style="margin-top: 0.5em; font-size: 1.1em;">GitKraken</span>
+                </div>
 
-                            <!-- 3ds Max -->
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <img src="assets/css/images/3dsMaxLogo.png" alt="3dsMax" style="height: 70px;">
-                                <span style="margin-top: 0.5em; font-size: 1.1em;">3ds Max</span>
-                            </div>
+                <!-- 3ds Max -->
+                <div>
+                    <img src="assets/css/images/3dsMaxLogo.png" alt="3dsMax" style="height: 70px;">
+                    <span style="margin-top: 0.5em; font-size: 1.1em;">3ds Max</span>
+                </div>
 
-                            <!-- Photoshop -->
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <img src="assets/css/images/PhotoshopLogo.png" alt="Photoshop" style="height: 70px;">
-                                <span style="margin-top: 0.5em; font-size: 1.1em;">Photoshop</span>
-                            </div>
-
-                        </div>
-                    </section>
+                <!-- Photoshop -->
+                <div>
+                    <img src="assets/css/images/PhotoshopLogo.png" alt="Photoshop" style="height: 70px;">
+                    <span style="margin-top: 0.5em; font-size: 1.1em;">Photoshop</span>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </article>
-
 
 
 <!-- Projects -->
 <article id="Projects" class="wrapper style3">
     <div class="container">
         <header>
-            <h2>Completed Unity Projects</h2>
-            <p>Here are some of the Unity projects I’ve built from the ground up.</p>
-            <p>Each project includes links to the full game, its repository, and a video detailing the progress.</p>
+            <h2>Unity Projects & Core Mechanics</h2>
+            <p>A closer look at the mechanics, scripts, and design patterns that power my games.</p>
         </header>
 
         
@@ -163,11 +156,41 @@
                     <h3>A Fisherman's Memories</h3>
                 </article>
             </div>
-        </div>
 
-        <footer>
-            <a href="#contact" class="button large scrolly">Contact me</a>
-        </footer>
+            <!-- Project 3 -->
+            <div class="col-4 col-6-medium col-12-small">
+                <article class="box style2 project-card"
+                         data-title="Clash Of The Ages"
+                         data-description="Remake, Strategy, Action"
+                         data-mechanics='[
+                   {
+                     "video": "Videos/PickUp Mechanic.gif",
+                     "text": "PickUp mechanic: pick up & drop lamps by commend ",
+                     "snippets": [
+                       { "title": "Player_Pickup_Controller.cs", "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/main/Assets/Scripts/Player/Player_Pickup_Controller.cs" },
+                       { "title": "DashFunctions.cs", "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/main/Assets/Scripts/Player/DashFunctions.cs" }
+                     ]
+                   },
+                   {
+                     "video": "Videos/DashMechanic.gif",
+                     "text": "Dash mechanic: allows the player to burst forward mid-air.",
+                     "snippets": [
+                       { "title": "DashFunctions.cs", "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/main/Assets/Scripts/Player/DashFunctions.cs" }
+                     ]
+                   }
+                 ]'
+                         data-links='[
+                   { "label": "Unity", "url": "https://play.unity.com/en/games/5b3ea9cc-c324-4a72-9772-06f8680892e2/a-fishermans-memories", "icon": "unity" },
+                   { "label": "YouTube", "url": "https://www.youtube.com/watch?v=lHVjwoLgg7M", "icon": "youtube" },
+                   { "label": "GitHub", "url": "https://github.com/Tamir-Zemach/A-Fishermans-Memories", "icon": "github" }
+                 ]'>
+                    <div class="image featured">
+                        <img src="images/A Fisherman's Memories Thumbnail.jpg" alt="A Fisherman's Memories Thumbnail"/>
+                    </div>
+                    <h3>Clash Of The Ages</h3>
+                </article>
+            </div>
+        </div>
     </div>
 </article>
 
@@ -218,17 +241,7 @@
                             class="label">Github</span></a></li>
                     <li><a href="https://play.unity.com/en/user/45fc48b9-e0ed-4375-9f57-7642e0445517"
                            class="icon brands fa-unity" target="_blank"><span class="label">unity</span></a></li>
-                    <!--
-                            <li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-                            <li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-                            <li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-                            <li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-                            <li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-                            <li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-                            <li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-                            <li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-                            <li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-                            -->
+          
                 </ul>
                 <hr/>
             </div>
@@ -250,7 +263,6 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-
 <!-- Reusable Modal -->
 <div id="projectModal" class="modal">
     <div class="modal-content">
@@ -270,3 +282,4 @@
 </div>
 
 </html>
+
