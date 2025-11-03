@@ -2546,16 +2546,33 @@ li::marker {
     transition: opacity 0.3s ease;
 }
 
-/* Modal content box */
+/* ------------------------------------------------------ Modal content box  ------------------------------------------------------*/
 .modal-content {
-    background: #1c1c1c; /* match your dark theme */
-    color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    width: 90%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  background: #1c1c1c;
+  color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+
+  max-height: 80vh;       /* contain within viewport */
+  overflow-y: scroll;     /* allow scrolling */
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+
+  position: relative;     /* ensures sticky positioning has a reference */
+
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Prevent background scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
 }
 
 /* Close button */
@@ -2569,9 +2586,19 @@ li::marker {
     color: #fff;
 }
 
+
+
 /* Media inside modal */
-#modalMedia video, #modalMedia img {
-    width: 100%;
+#modalMedia video {
+    width: 50%;          /* shrink to 70% of modal width */
+    max-width: 500px;    /* cap at 500px */
+    display: block;      /* so margin auto works */
+    margin: 15px auto;   /* centers horizontally */
+    border-radius: 6px;
+}
+
+#modalMedia img {
+    width: 100%;         /* keep images full width if you like */
     border-radius: 6px;
     margin-top: 15px;
 }
@@ -2594,15 +2621,16 @@ li::marker {
 .modal-links a:hover {
     color: #61b89e;
 }
-
-/* Snippet button row */
-.snippet-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: flex-start;
+.modal-media-box {
+  position: relative;
+  overflow: visible;
+  margin-bottom: 2em; /* spacing between sections */
+  background: #2a2a2a; /* optional: give each section its own box feel */
+  border-radius: 6px;
+  padding: 10px;
 }
+
+
 
 /* Individual buttons */
 .snippet-toggle {
@@ -2631,29 +2659,37 @@ li::marker {
     border-color: #1e90ff;
 }
 
-/* Shared code panel */
+
+.snippet-group {
+  top: 0;
+  z-index: 50;             /* higher than code */
+  background: #1c1c1c;     /* solid background */
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+}
 .snippet-content {
-    margin-top: 15px;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-    background: #222;
-    color: #eee;
-    border-radius: 6px;
-    font-family: monospace;
-    white-space: pre-wrap;
-    padding: 0;
+  margin-top: 0;           /* flush under buttons */
+  position: relative;
+  z-index: 1;              /* below toolbar */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  background: #222;
+  color: #eee;
+  border-radius: 0 0 6px 6px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 0;
 }
 
-/* Open state */
 .snippet-content.open {
-    max-height: 600px;
-    padding: 1em;
-    overflow-y: auto;
-    opacity: 1;
-    visibility: visible;
+  max-height: 600px;
+  padding: 1em;
+  overflow-y: auto;        /* scroll inside code */
+  opacity: 1;
+  visibility: visible;
 }
 
 .code-box {
@@ -2661,9 +2697,9 @@ li::marker {
 }
 
 .resize-handle {
-    pointer-events: none;
+    cursor: ns-resize; /* up/down resize cursor */
+    pointer-events: auto;
     opacity: 0.4;
-    cursor: default;
     z-index: 10;
 
     /* Button-like styling */
@@ -2671,7 +2707,7 @@ li::marker {
     align-items: center;
     justify-content: center;
 
-    width: 40px;
+    width: 100px;
     height: 30px;
     margin: 10px auto 0;
     border-radius: 6px;
@@ -2683,6 +2719,7 @@ li::marker {
     touch-action: none;
     user-select: none;
     transition: all 0.2s ease-in-out;
+	
 }
 .snippet-content.open + .resize-handle:hover {
     background-color: #1e90ff;
@@ -2790,6 +2827,7 @@ li::marker {
         margin-bottom: 20px;
         border-radius: 6px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		position: relative;
     }
 
     .modal-media-box video {
