@@ -207,7 +207,44 @@ window.addEventListener('DOMContentLoaded', () => {
 
         modalMedia.appendChild(box);
       });
+      // Parse and render links
+let links = [];
+try {
+  links = JSON.parse(card.dataset.links);
+} catch (err) {
+  console.error("Invalid links JSON:", err);
+}
 
+if (links.length > 0) {
+  // Bottom links
+  const linkContainer = document.createElement("div");
+  linkContainer.className = "modal-links";
+
+  links.forEach(link => {
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+
+    if (link.icon) {
+      const icon = document.createElement("i");
+      icon.classList.add("fa-brands", `fa-${link.icon}`);
+      a.appendChild(icon);
+    }
+
+    a.append(" " + link.label);
+    linkContainer.appendChild(a);
+  });
+
+  modalMedia.appendChild(linkContainer);
+
+  // Top‑right links (same as bottom)
+  const topLinks = linkContainer.cloneNode(true);
+  topLinks.classList.add("modal-links-top");
+
+  const modalContent = modal.querySelector(".modal-content");
+  modalContent.prepend(topLinks);
+}
       modal.style.display = 'block';
       document.body.classList.add('modal-open');
     });
