@@ -93,52 +93,9 @@
                 <!-- Project 1 -->
                 <div class="col-4 col-6-medium col-12-small">
                     <article class="box style2 project-card" data-title="Screw Man"
-                        data-description="2D, Platformer, Action" data-mechanics='[
-      {
-        "title": "Dash Drill",
-        "video": "Videos/ScrewMan/ScrewManDashJump.mp4",
-        "text": "Launches the player downward in a high speed burst, tunneling through the ground while ignoring obstacles, then erupting back out with force to continue movement.",
-        "snippets": [
-          {
-            "title": "DashFunctions.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/main/Assets/Scripts/Player/DashFunctions.cs"
-          }
-        ]
-      },
-      {
-        "title": "Camera Transition",
-        "video": "Videos/ScrewMan/ScrewManCameraTransition.mp4",
-        "text": "Manages smooth transitions between the default and special zone cameras, adjusting framing based on player direction and adding shake effects for impact.",
-        "snippets": [
-          {
-            "title": "CameraController.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Triggers/CameraController.cs"
-          }
-        ]
-      },
-      {
-        "title": "Ragdoll",
-        "video": "Videos/ScrewMan/ScrewManRagdoll.mp4",
-        "text": "Replaces defeated enemies with a physics-driven ragdoll, applying random forces and spin for dynamic death animations before fading out.",
-        "snippets": [
-          {
-            "title": "Ragdoll.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Enemies/Ragdoll.cs"
-          }
-        ]
-      },
-      {
-        "title": "Static Turret",
-        "video": "Videos/ScrewMan/ScrewManStaticTurret.mp4",
-        "text": "Implements a stationary enemy that continuously fires projectiles, reacts to player attacks with hit feedback, and transitions into a destroyed state when defeated.",
-        "snippets": [
-          {
-            "title": "StaticTurret.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Enemies/StaticTurret.cs"
-          }
-        ]
-      }
-    ]' data-links='[
+                        data-description="2D, Platformer, Action" 
+                        data-mechanics-src="assets/Json/Mechanics/mechanics-ScrewMan.json"
+                        data-links='[
       {
         "label": "Unity",
         "url": "https://play.unity.com/en/games/e7555e0c-ba1b-4720-87ea-e35a9e1ad7f6/screw-man",
@@ -164,35 +121,11 @@
 
                 <!-- Project 2 -->
                 <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2 project-card" data-title="A Fisherman's Memories"
-                        data-description="3D, Puzzle, Mystery" data-mechanics='[
-      {
-        "title": "Pickup & Drop",
-        "video": "Videos/Fisherman/FishermanPickUp.mp4",
-        "text": "Allows the player to detect, pick up, and carry interactive objects, with visual highlights, camera adjustments, and smooth drop handling.",
-        "snippets": [
-          {
-            "title": "PlayerPickupController.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/refs/heads/main/Assets/Scripts/Player/PlayerPickupController.cs"
-          },
-          {
-            "title": "CheckForPickables.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/refs/heads/main/Assets/Scripts/Player/CheckForPickables.cs"
-          }
-        ]
-      },
-      {
-        "title": "Color Reactive Wall",
-        "video": "Videos/Fisherman/FishermanColorDissolve.mp4",
-        "text": "A dynamic barrier that materializes or dissolves based on specific lantern color combinations, with particle effects that visually reflect the active colors.",
-        "snippets": [
-          {
-            "title": "ColorReactiveWall.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/refs/heads/main/Assets/Scripts/Walls/ColorReactiveWall.cs"
-          }
-        ]
-      }
-    ]' data-links='[
+                    <article class="box style2 project-card" 
+                    data-title="A Fisherman's Memories"
+                        data-description="3D, Puzzle, Mystery" 
+                        data-mechanics-src="assets/Json/Mechanics/mechanics-fisherman.json"
+                        data-links='[
       {
         "label": "Unity",
         "url": "https://play.unity.com/en/games/5b3ea9cc-c324-4a72-9772-06f8680892e2/a-fishermans-memories",
@@ -223,69 +156,7 @@
     class="box style2 project-card"
     data-title="Clash Of The Ages"
     data-description="Remake, Strategy, Action"
-    data-mechanics='[
-      {
-        "title": "Upgrade Popup",
-        "video": "Videos/COTA/COTAUpgradePopUp.mp4",
-        "text": "Displays a dynamic upgrade selection interface that pauses gameplay, retrieves eligible options based on rules and limits, and spawns randomized upgrade slots with smooth UI transitions.",
-        "snippets": [
-          {
-            "title": "UpgradePopup.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Buttons/Upgrade%20Popup/UpgradePopup.cs"
-          },
-          {
-            "title": "UpgradePopupConfiguration.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Configuration/UpgradePopupConfiguration.cs"
-          },
-          {
-            "title": "UpgradeEligibilityChecker.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/PopupUtil/UpgradeEligibilityChecker.cs"
-          }
-        ]
-      },
-      {
-        "title": "Unit Spawner",
-        "video": "Videos/COTA/COTAUnitSpawner.mp4",
-        "text": "Handles the full unit deployment pipeline, from queuing and validating costs to timed spawning and initialization on lanes, ensuring smooth integration between UI, economy, and battlefield logic.",
-        "snippets": [
-          {
-            "title": "UnitSpawner.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Managers/Spawners/UnitSpawner.cs"
-          },
-          {
-            "title": "UnitDeploymentQueue.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Managers/Spawners/UnitDeploymentQueue.cs"
-          },
-          {
-            "title": "UnitDeployButton.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Buttons/Deploy%20Button/UnitDeployButton.cs"
-          },
-          {
-            "title": "Deployment.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Structs/Deployment.cs"
-          }
-        ]
-      },
-      {
-        "title": "Money Flash",
-        "video": "Videos/COTA/COTAMoneyFlash.mp4",
-        "text": "Provides responsive currency feedback by animating rising values on gain and flashing the UI red with scale and shake effects when funds are insufficient. Built on reusable utility classes (UIEffects, NumberRisingUtil) that can be applied across different UI elements for consistent, scalable feedback.",
-        "snippets": [
-          {
-            "title": "MoneyTextUiDisplay.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Text%20Display/MoneyTextUiDisplay.cs"
-          },
-          {
-            "title": "UIEffects.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/EffectsUtil/UIEffects.cs"
-          },
-          {
-            "title": "NumberRisingUtil.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/NumberRisingUtil.cs"
-          }
-        ]
-      }
-    ]'
+    data-mechanics-src="assets/Json/Mechanics/mechanics-cota.json"
     data-links='[
       {
         "label": "Unity",

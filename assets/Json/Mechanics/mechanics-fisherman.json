@@ -1,0 +1,28 @@
+[
+      {
+        "title": "Pickup & Drop",
+        "video": "Videos/Fisherman/FishermanPickUp.mp4",
+        "text": "Allows the player to detect, pick up, and carry interactive objects, with visual highlights, camera adjustments, and smooth drop handling.",
+        "snippets": [
+          {
+            "title": "PlayerPickupController.cs",
+            "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/refs/heads/main/Assets/Scripts/Player/PlayerPickupController.cs"
+          },
+          {
+            "title": "CheckForPickables.cs",
+            "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/refs/heads/main/Assets/Scripts/Player/CheckForPickables.cs"
+          }
+        ]
+      },
+      {
+        "title": "Color Reactive Wall",
+        "video": "Videos/Fisherman/FishermanColorDissolve.mp4",
+        "text": "A dynamic barrier that materializes or dissolves based on specific lantern color combinations, with particle effects that visually reflect the active colors.",
+        "snippets": [
+          {
+            "title": "ColorReactiveWall.cs",
+            "url": "https://raw.githubusercontent.com/Tamir-Zemach/A-Fishermans-Memories/refs/heads/main/Assets/Scripts/Walls/ColorReactiveWall.cs"
+          }
+        ]
+      }
+    ]
