@@ -107,10 +107,15 @@ window.addEventListener('DOMContentLoaded', () => {
         const box = document.createElement('div');
         box.className = 'modal-media-box';
         box.innerHTML = `
-          <video src="${m.video}" autoplay loop muted controls
-            style="width:100%; border-radius:6px;"></video>
-          <p>${m.text}</p>
-        `;
+  <div class="mechanic">
+   <h3 class="mechanic-title">${m.title || "Mechanic"}</h3>
+      <video src="${m.video}" autoplay loop muted controls
+    style="width: 100%; border-radius: 6px;"></video>
+    <p class="mechanic-description">${m.text}</p>
+    <div class="mechanic-scripts-label">Scripts:</div>
+  </div>
+
+`;
 
         if (m.snippets && Array.isArray(m.snippets)) {
           const buttonGroup = document.createElement('div');
