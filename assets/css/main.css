@@ -2809,7 +2809,7 @@ body.modal-open {
 }
 
 .modal-links a .fa-youtube {
-	color: #0011ff;
+	color: #FF0000;
 }
 
 .modal-links a .fa-github {
@@ -3118,25 +3118,10 @@ body.modal-open {
 	.modal-snippets {
 		margin-top: 30px;
 	}
-
   .modal-links-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;   /* align with description text */
-    gap: 0.5em;
-
-    margin-top: 2em;   /* push them further down */
-    margin-left: 1em;    /* align with description text */
+    display: none !important;
   }
 
-  .modal-links-top a {
-    font-size: 0.85em;
-    padding: 0.25em 0.5em;
-  }
-
-  .modal-links-top i {
-    font-size: 0.9em;
-  }
 
 
 

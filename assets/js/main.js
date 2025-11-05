@@ -309,8 +309,15 @@ pre.classList.add('open');
 const modalContent = document.querySelector('.modal-content');
 const modalRect = modalContent.getBoundingClientRect();
 
-// Fill almost the entire modal (subtract a little padding for safety)
-pre.style.height = (modalRect.height - 40) + 'px';
+// Default: fill modal height
+let targetHeight = modalRect.height - 40;
+
+// On small screens, cap the height lower
+if (window.innerWidth <= 736) {
+  targetHeight = Math.min(targetHeight, 300); // cap at 300px
+}
+
+pre.style.height = targetHeight + 'px';
 
 // Mark active
 pre.dataset.active = button.textContent;
@@ -318,28 +325,26 @@ pre.innerHTML = 'Loading...';
 
 // Scroll the modal so the snippet is in view, but leave space for the button
 setTimeout(() => {
-  const modalContent = document.querySelector('.modal-content');
   const buttonTop = button.getBoundingClientRect().top;
   const modalTop = modalContent.getBoundingClientRect().top;
 
-  // Calculate relative offset inside modal
   const offset = buttonTop - modalTop;
 
-  // Scroll so the button is ~40px above the snippet
   modalContent.scrollTo({
     top: modalContent.scrollTop + offset - 40,
     behavior: 'smooth'
   });
 }, 100);
-    fetch(button.dataset.url)
-      .then(res => res.text())
-      .then(code => {
-        pre.innerHTML = '';
-        pre.insertAdjacentText('afterbegin', code);
-      })
-      .catch(() => {
-        pre.innerHTML = 'Failed to load script.';
-      });
+
+fetch(button.dataset.url)
+  .then(res => res.text())
+  .then(code => {
+    pre.innerHTML = '';
+    pre.insertAdjacentText('afterbegin', code);
+  })
+  .catch(() => {
+    pre.innerHTML = 'Failed to load script.';
+  });
   });
 
   // Scroll redirect
