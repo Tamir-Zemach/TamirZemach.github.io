@@ -2813,7 +2813,7 @@ body.modal-open {
 }
 
 .modal-links a .fa-github {
-	color: #181717;
+	color: #686666;
 }
 
 .modal-links-top {
@@ -3119,18 +3119,22 @@ body.modal-open {
 		margin-top: 30px;
 	}
 
-	.modal-links-top a {
-		font-size: 0.8em;
-		/* shrink text */
-		padding: 0.25em 0.5em;
-		/* tighter spacing */
-	}
+  .modal-links-top {
+    display: flex;
+    flex-wrap: wrap;       /* allow wrapping to multiple rows */
+    justify-content: flex-end; /* push them to the right side */
+    gap: 0.5em;            /* spacing between links */
+    margin-top: 0.5em;
+  }
 
-	.modal-links-top i {
-		font-size: 0.9em;
-		/* shrink icons */
-		margin-right: 0.25em;
-		/* keep spacing neat */
-	}
+  .modal-links-top a {
+    font-size: 0.85em;     /* slightly smaller text */
+    padding: 0.25em 0.5em; /* tighter padding */
+  }
+
+  .modal-links-top i {
+    font-size: 0.9em;      /* smaller icons */
+  }
+
 
 }
