@@ -3121,20 +3121,24 @@ body.modal-open {
 
   .modal-links-top {
     display: flex;
-    flex-wrap: wrap;       /* allow wrapping to multiple rows */
-    justify-content: flex-end; /* push them to the right side */
-    gap: 0.5em;            /* spacing between links */
-    margin-top: 0.5em;
+    flex-wrap: wrap;
+    justify-content: flex-start;   /* align with description text */
+    gap: 0.5em;
+
+    /* Push them down and right */
+    margin-top: 1em;               /* below the "×" */
+    margin-left: 1em;              /* aligned with description */
   }
 
   .modal-links-top a {
-    font-size: 0.85em;     /* slightly smaller text */
-    padding: 0.25em 0.5em; /* tighter padding */
+    font-size: 0.85em;
+    padding: 0.25em 0.5em;
   }
 
   .modal-links-top i {
-    font-size: 0.9em;      /* smaller icons */
+    font-size: 0.9em;
   }
+
 
 
 }
