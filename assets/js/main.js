@@ -44,7 +44,6 @@
     });
   });
 })(jQuery);
-
 // Modal logic
 window.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('projectModal');
@@ -64,7 +63,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.userSelect = '';
   };
 
-  // Close modal with the X button
   if (modalClose) {
     modalClose.addEventListener('click', () => {
       modal.style.display = 'none';
@@ -73,7 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close when clicking backdrop
   window.addEventListener('click', (e) => {
     if (suppressClick) {
       suppressClick = false;
@@ -86,26 +83,38 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- NEW: helper to load mechanics JSON ---
+  // Load mechanics from external JSON
   async function loadMechanicsForCard(card) {
-    // Already cached?
     if (card.dataset.mechanics) {
-      try {
-        return JSON.parse(card.dataset.mechanics);
-      } catch {
-        console.warn('Invalid cached mechanics JSON for', card.dataset.title);
-      }
+      try { return JSON.parse(card.dataset.mechanics); } catch {}
     }
     const src = card.dataset.mechanicsSrc;
     if (!src) return [];
     try {
       const res = await fetch(src);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      card.dataset.mechanics = JSON.stringify(data); // cache
+      card.dataset.mechanics = JSON.stringify(data);
       return data;
     } catch (err) {
       console.error('Failed to load mechanics JSON:', err);
+      return [];
+    }
+  }
+
+  // Load links from external JSON
+  async function loadLinksForCard(card) {
+    if (card.dataset.links) {
+      try { return JSON.parse(card.dataset.links); } catch {}
+    }
+    const src = card.dataset.linksSrc;
+    if (!src) return [];
+    try {
+      const res = await fetch(src);
+      const data = await res.json();
+      card.dataset.links = JSON.stringify(data);
+      return data;
+    } catch (err) {
+      console.error('Failed to load links JSON:', err);
       return [];
     }
   }
@@ -120,19 +129,14 @@ window.addEventListener('DOMContentLoaded', () => {
       modalDescription.textContent = description;
       modalMedia.innerHTML = "";
 
-      // Load mechanics (external JSON or inline)
+      // Load mechanics
       let mechanics = [];
       if (card.dataset.mechanicsSrc) {
         mechanics = await loadMechanicsForCard(card);
       } else {
-        try {
-          mechanics = JSON.parse(card.dataset.mechanics);
-        } catch (err) {
-          console.error('Invalid mechanics JSON:', err);
-        }
+        try { mechanics = JSON.parse(card.dataset.mechanics); } catch {}
       }
 
-      // Render mechanics
       mechanics.forEach(m => {
         const box = document.createElement('div');
         box.className = 'modal-media-box';
@@ -177,19 +181,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
           box.appendChild(buttonGroup);
           box.appendChild(snippetWrapper);
-
-          // (your resize logic remains here)
         }
 
         modalMedia.appendChild(box);
       });
 
-      // Parse and render links
+      // Load links
       let links = [];
-      try {
-        links = JSON.parse(card.dataset.links);
-      } catch (err) {
-        console.error("Invalid links JSON:", err);
+      if (card.dataset.linksSrc) {
+        links = await loadLinksForCard(card);
+      } else {
+        try { links = JSON.parse(card.dataset.links); } catch {}
       }
 
       if (links.length > 0) {
@@ -225,7 +227,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Toggle snippet open/close (unchanged)
+  // Snippet toggle logic (unchanged)
   document.addEventListener('click', (e) => {
     const button = e.target.closest('.snippet-toggle');
     if (!button) return;
@@ -264,13 +266,11 @@ window.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  // Redirect wheel scroll to modal content
+  // Scroll redirect
   const modalContent = document.querySelector('.modal-content');
   const onWheelRedirectToModal = (e) => {
     if (modal.style.display === 'block') {
-      if (e.target.closest('.snippet-content.open')) {
-        return;
-      }
+      if (e.target.closest('.snippet-content.open')) return;
       e.preventDefault();
       modalContent.scrollTop += e.deltaY;
     }
