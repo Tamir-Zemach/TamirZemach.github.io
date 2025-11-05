@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Load mechanics from external JSON
   async function loadMechanicsForCard(card) {
     if (card.dataset.mechanics) {
-      try { return JSON.parse(card.dataset.mechanics); } catch {}
+      try { return JSON.parse(card.dataset.mechanics); } catch { }
     }
     const src = card.dataset.mechanicsSrc;
     if (!src) return [];
@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Load links from external JSON
   async function loadLinksForCard(card) {
     if (card.dataset.links) {
-      try { return JSON.parse(card.dataset.links); } catch {}
+      try { return JSON.parse(card.dataset.links); } catch { }
     }
     const src = card.dataset.linksSrc;
     if (!src) return [];
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (card.dataset.mechanicsSrc) {
         mechanics = await loadMechanicsForCard(card);
       } else {
-        try { mechanics = JSON.parse(card.dataset.mechanics); } catch {}
+        try { mechanics = JSON.parse(card.dataset.mechanics); } catch { }
       }
 
       mechanics.forEach(m => {
@@ -178,6 +178,60 @@ window.addEventListener('DOMContentLoaded', () => {
           codeBox.appendChild(sharedPre);
           codeBox.appendChild(resizeHandle);
           snippetWrapper.appendChild(codeBox);
+          // Restore drag-to-resize functionality
+          let startY, startHeight;
+
+          resizeHandle.addEventListener('mousedown', e => {
+            e.preventDefault();
+            if (!sharedPre.classList.contains('open')) {
+              sharedPre.classList.add('open');
+            }
+            if (!sharedPre.offsetHeight) {
+              sharedPre.style.height = '300px';
+            }
+            isDragging = true;
+            startY = e.clientY;
+            startHeight = sharedPre.offsetHeight;
+            document.body.style.userSelect = 'none';
+          });
+
+          resizeHandle.addEventListener('touchstart', e => {
+            e.preventDefault();
+            if (!sharedPre.classList.contains('open')) {
+              sharedPre.classList.add('open');
+            }
+            if (!sharedPre.offsetHeight) {
+              sharedPre.style.height = '300px';
+            }
+            isDragging = true;
+            startY = e.touches[0].clientY;
+            startHeight = sharedPre.offsetHeight;
+          });
+
+          window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            const dy = e.clientY - startY;
+            const modalContent = document.querySelector('.modal-content');
+            const modalRect = modalContent.getBoundingClientRect();
+            const panelRect = sharedPre.getBoundingClientRect();
+            const availableHeight = modalRect.height - (panelRect.top - modalRect.top) - 50;
+            const next = Math.min(Math.max(120, startHeight + dy), availableHeight);
+            sharedPre.style.height = `${next}px`;
+          });
+
+          window.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            const dy = e.touches[0].clientY - startY;
+            const modalContent = document.querySelector('.modal-content');
+            const panelRect = sharedPre.getBoundingClientRect();
+            const modalRect = modalContent.getBoundingClientRect();
+            const availableHeight = modalRect.height - (panelRect.top - modalRect.top) - 50;
+            const next = Math.min(Math.max(120, startHeight + dy), availableHeight);
+            sharedPre.style.height = `${next}px`;
+          });
+
+          window.addEventListener('mouseup', stopDrag);
+          window.addEventListener('touchend', stopDrag);
 
           box.appendChild(buttonGroup);
           box.appendChild(snippetWrapper);
@@ -191,7 +245,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (card.dataset.linksSrc) {
         links = await loadLinksForCard(card);
       } else {
-        try { links = JSON.parse(card.dataset.links); } catch {}
+        try { links = JSON.parse(card.dataset.links); } catch { }
       }
 
       if (links.length > 0) {
