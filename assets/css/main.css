@@ -3119,4 +3119,18 @@ body.modal-open {
 		margin-top: 30px;
 	}
 
+	.modal-links-top a {
+		font-size: 0.8em;
+		/* shrink text */
+		padding: 0.25em 0.5em;
+		/* tighter spacing */
+	}
+
+	.modal-links-top i {
+		font-size: 0.9em;
+		/* shrink icons */
+		margin-right: 0.25em;
+		/* keep spacing neat */
+	}
+
 }
