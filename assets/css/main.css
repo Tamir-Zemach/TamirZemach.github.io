@@ -2809,7 +2809,7 @@ body.modal-open {
 }
 
 .modal-links a .fa-youtube {
-	color: #FF0000;
+	color: #0011ff;
 }
 
 .modal-links a .fa-github {
@@ -3125,7 +3125,7 @@ body.modal-open {
     justify-content: flex-start;   /* align with description text */
     gap: 0.5em;
 
-    margin-top: 2.5em;   /* push them further down */
+    margin-top: 2em;   /* push them further down */
     margin-left: 1em;    /* align with description text */
   }
 
