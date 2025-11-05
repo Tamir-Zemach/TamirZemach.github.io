@@ -312,9 +312,9 @@ const modalRect = modalContent.getBoundingClientRect();
 // Default: fill modal height
 let targetHeight = modalRect.height - 40;
 
-// On small screens, cap the height lower
-if (window.innerWidth <= 736) {
-  targetHeight = Math.min(targetHeight, 300); // cap at 300px
+// On small screens, cap the height dynamically (e.g. 60% of modal height)
+if (window.innerWidth <= 736) {   // matches your "small" breakpoint
+  targetHeight = Math.min(targetHeight, modalRect.height * 0.6);
 }
 
 pre.style.height = targetHeight + 'px';
