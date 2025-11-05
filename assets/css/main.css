@@ -3125,9 +3125,8 @@ body.modal-open {
     justify-content: flex-start;   /* align with description text */
     gap: 0.5em;
 
-    /* Push them down and right */
-    margin-top: 1em;               /* below the "×" */
-    margin-left: 1em;              /* aligned with description */
+    margin-top: 2.5em;   /* push them further down */
+    margin-left: 1em;    /* align with description text */
   }
 
   .modal-links-top a {
@@ -3138,6 +3137,7 @@ body.modal-open {
   .modal-links-top i {
     font-size: 0.9em;
   }
+
 
 
 
