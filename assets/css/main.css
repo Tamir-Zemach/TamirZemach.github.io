@@ -331,6 +331,7 @@ header>p {
 	margin: 0;
 }
 
+
 footer {
 	margin: 3em 0 0 0;
 }
@@ -1022,10 +1023,10 @@ ul.actions li:first-child {
 }
 
 .box.style2 h3 {
-  font-size: 1.25em;
-  margin-top: 0.4em;
-  margin-bottom: 0.25em;
-  padding: 0.4em 0.6em;
+	font-size: 1.25em;
+	margin-top: 0.4em;
+	margin-bottom: 0.25em;
+	padding: 0.4em 0.6em;
 
 }
 
@@ -1364,39 +1365,44 @@ li::marker {
 	align-items: center;
 }
 
-
 .about-section {
 	background: #e7e7e7 !important;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
-	margin: 3em auto;
-	max-width: 1000px;
+	margin: 4em auto;
+	/* reduced vertical margin */
+	max-width: 900px;
+	/* slightly narrower */
 	text-align: center;
 	font-family: 'Poppins', 'Open Sans', sans-serif;
-	/* modern, clean font */
+	padding: 2em 1.5em;
+	/* add padding control if needed */
 }
 
 .about-section h2 {
-	font-size: 2.4em;
+	font-size: 2.2em;
+	/* slightly smaller heading */
 	font-weight: 700;
-	margin-bottom: 0.8em;
+	margin-bottom: 0.5em;
+	/* reduced spacing below */
 	color: #222;
-	letter-spacing: 1px;
+	letter-spacing: 0.5px;
 }
 
 .about-section p {
-	font-size: 1.1em;
-	line-height: 1.8em;
+	font-size: 1em;
+	/* slightly smaller text */
+	line-height: 1.6em;
+	/* tighter line spacing */
 	color: #333;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
+	/* reduced spacing between paragraphs */
 }
 
 .about-section strong {
 	color: #000000;
-	/* accent color for emphasis */
 	font-weight: 600;
 }
-
 
 #popup {
 	display: none;
@@ -1434,13 +1440,60 @@ li::marker {
 }
 
 
+
 .hero-title {
-  font-family: 'Poppins', 'Open Sans', sans-serif;
-  font-size: 2.5em;
-  font-weight: 700;
-  text-align: left;
-  margin: 0.5em auto 1em auto;
-  line-height: 1.4em;
-  color: #222;
+	font-family: 'Poppins', 'Open Sans', sans-serif;
+	font-size: 2.5em;
+	font-weight: 600;
+	text-align: left;
+	/* centered instead of left */
+	margin: 0.5em auto 1em auto;
+	line-height: 1.4em;
+	color: #111;
+
+	/* Sleek effect */
+	text-transform: uppercase;
+	/* all caps for impact */
+	letter-spacing: 2px;
+	/* wide spacing for a clean look */
+	position: relative;
+	display: inline-block;
+	white-space: pre-line;
 }
 
+
+/* Animated underline */
+.hero-title::after {
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 3px;
+	background: #43B3E0;
+	transition: width 0.4s ease;
+}
+
+.hero-title:hover::after {
+	width: 100%;
+}
+
+.hero-buttons {
+  margin-top: 1em;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start; /* default: left align */
+}
+
+/* Override for smaller screens */
+@media screen and (max-width: 980px) {
+  .hero-buttons {
+    justify-content: center; /* center align on tablet/mobile */
+  }
+}
+
+.hero-buttons .button {
+	min-width: 140px;
+	/* consistent button size */
+}
