@@ -17,6 +17,9 @@
 	width: 100%;
 	max-width: 400px;
 	margin: 2em auto;
+	z-index: 1;
+	/* keep cards below modal */
+
 }
 
 .project-card:hover {
@@ -36,6 +39,9 @@
 	/* Hint to Chrome */
 	transform: translateZ(0);
 	/* Force GPU layer */
+	z-index: 0;
+	/* ensure image stays behind overlays */
+
 }
 
 .project-card .image.featured img {

@@ -141,13 +141,13 @@ window.addEventListener('DOMContentLoaded', () => {
         const box = document.createElement('div');
         box.className = 'modal-media-box';
         box.innerHTML = `
-          <div class="mechanic">
-            <h3 class="mechanic-title">${m.title || "Mechanic"}</h3>
-            <video src="${m.video}" autoplay loop muted controls style="width: 100%; border-radius: 6px;"></video>
-            <p class="mechanic-description">${m.text || ""}</p>
-            <div class="mechanic-scripts-label">Scripts:</div>
-          </div>
-        `;
+  <div class="mechanic">
+    <h3 class="mechanic-title">${m.title || "Mechanic"}</h3>
+    <video src="${m.video}" autoplay loop muted playsinline style="width:100%; border-radius:6px;"></video>
+    <p class="mechanic-description">${m.text || ""}</p>
+    <div class="mechanic-scripts-label">Scripts :</div>
+  </div>
+`;
 
         if (Array.isArray(m.snippets)) {
           const buttonGroup = document.createElement('div');
@@ -302,51 +302,51 @@ window.addEventListener('DOMContentLoaded', () => {
       pre.innerHTML = '';
       return;
     }
-button.classList.add('active');
-pre.classList.add('open');
+    button.classList.add('active');
+    pre.classList.add('open');
 
-// Make snippet fill the modal height
-const modalContent = document.querySelector('.modal-content');
-const modalRect = modalContent.getBoundingClientRect();
+    // Make snippet fill the modal height
+    const modalContent = document.querySelector('.modal-content');
+    const modalRect = modalContent.getBoundingClientRect();
 
-// Default: fill modal height
-let targetHeight = modalRect.height - 40;
+    // Default: fill modal height
+    let targetHeight = modalRect.height - 40;
 
-// On small screens, cap the height dynamically (e.g. 60% of modal height)
-if (window.innerWidth <= 736) {   // matches your "small" breakpoint
-  targetHeight = Math.min(targetHeight, modalRect.height * 0.6);
-}
-// Adjust down a bit so the handle is visible
-targetHeight = targetHeight - 110; // <-- new line
+    // On small screens, cap the height dynamically (e.g. 60% of modal height)
+    if (window.innerWidth <= 736) {   // matches your "small" breakpoint
+      targetHeight = Math.min(targetHeight, modalRect.height * 0.6);
+    }
+    // Adjust down a bit so the handle is visible
+    targetHeight = targetHeight - 110; // <-- new line
 
-pre.style.height = targetHeight + 'px';
+    pre.style.height = targetHeight + 'px';
 
-// Mark active
-pre.dataset.active = button.textContent;
-pre.innerHTML = 'Loading...';
+    // Mark active
+    pre.dataset.active = button.textContent;
+    pre.innerHTML = 'Loading...';
 
-// Scroll the modal so the snippet is in view, but leave space for the button
-setTimeout(() => {
-  const buttonTop = button.getBoundingClientRect().top;
-  const modalTop = modalContent.getBoundingClientRect().top;
+    // Scroll the modal so the snippet is in view, but leave space for the button
+    setTimeout(() => {
+      const buttonTop = button.getBoundingClientRect().top;
+      const modalTop = modalContent.getBoundingClientRect().top;
 
-  const offset = buttonTop - modalTop;
+      const offset = buttonTop - modalTop;
 
-  modalContent.scrollTo({
-    top: modalContent.scrollTop + offset - 40,
-    behavior: 'smooth'
-  });
-}, 100);
+      modalContent.scrollTo({
+        top: modalContent.scrollTop + offset - 40,
+        behavior: 'smooth'
+      });
+    }, 100);
 
-fetch(button.dataset.url)
-  .then(res => res.text())
-  .then(code => {
-    pre.innerHTML = '';
-    pre.insertAdjacentText('afterbegin', code);
-  })
-  .catch(() => {
-    pre.innerHTML = 'Failed to load script.';
-  });
+    fetch(button.dataset.url)
+      .then(res => res.text())
+      .then(code => {
+        pre.innerHTML = '';
+        pre.insertAdjacentText('afterbegin', code);
+      })
+      .catch(() => {
+        pre.innerHTML = 'Failed to load script.';
+      });
   });
 
   // Scroll redirect
