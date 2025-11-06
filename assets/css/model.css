@@ -335,6 +335,7 @@ body.modal-open {
 }
 
 .resize-handle {
+
 	cursor: ns-resize;
 	/* up/down resize cursor */
 	pointer-events: auto;
@@ -342,7 +343,7 @@ body.modal-open {
 	z-index: 10;
 
 	/* Button-like styling */
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 
@@ -369,6 +370,7 @@ body.modal-open {
 }
 
 .snippet-content.open+.resize-handle {
+	display: flex;
 	pointer-events: auto;
 	opacity: 1;
 	cursor: ns-resize;
