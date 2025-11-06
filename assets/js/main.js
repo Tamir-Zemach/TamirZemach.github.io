@@ -316,6 +316,8 @@ let targetHeight = modalRect.height - 40;
 if (window.innerWidth <= 736) {   // matches your "small" breakpoint
   targetHeight = Math.min(targetHeight, modalRect.height * 0.6);
 }
+// Adjust down a bit so the handle is visible
+targetHeight = targetHeight - 110; // <-- new line
 
 pre.style.height = targetHeight + 'px';
 
