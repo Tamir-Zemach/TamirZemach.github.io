@@ -347,7 +347,6 @@ footer>p {
 	margin: 0 auto;
 	max-width: calc(100% - 50px);
 	width: 1200px;
-	height: 200px;
 }
 
 .container.medium {
@@ -1378,7 +1377,7 @@ li::marker {
 	background: #e7e7e7 !important;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
-	margin: 4em auto;
+	margin: 2em auto;
 	/* reduced vertical margin */
 	max-width: 900px;
 	/* slightly narrower */

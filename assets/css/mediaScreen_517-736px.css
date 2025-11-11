@@ -526,8 +526,23 @@
 		display: none !important;
 	}
 
+	#top {
+    padding: 10em 0 10em 0;
+    text-align: center;
+	}
 
+	#top .row{
+		max-width: 500px;
+		margin-bottom: 1em;
+	}
+	
 
+	#top .row>.col-9 {
+		margin-top: 25px;
+	}
 
+    .about-section {
+        max-width: 500px;
+    }
 
 }

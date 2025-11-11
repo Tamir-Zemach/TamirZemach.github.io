@@ -1,0 +1,19 @@
+@media screen and (max-width: 517px) {
+
+    #top .row {
+        max-width: 300px;
+    }
+
+    #top .row>.col-9 {
+        margin-top: 0;
+    }
+
+    .row>* {
+        padding: 15px 15px 15px 15px;
+    }
+
+    .about-section {
+        max-width: 400px;
+    }
+
+}
