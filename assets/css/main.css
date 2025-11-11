@@ -255,7 +255,7 @@ h4,
 h5,
 h6 {
 	color: #3e3e3e;
-	margin: 0 0 0.75em 0;
+	margin: 0;
 }
 
 h1 a,
@@ -284,6 +284,7 @@ h1 {
 
 h1 strong {
 	font-weight: 700;
+	font-size: 1.5em;
 }
 
 h2 {
@@ -319,11 +320,11 @@ ul,
 ol,
 dl,
 table {
-	margin-bottom: 2em;
+	margin-bottom: 0em;
 }
 
 header {
-	margin: 0 0 3em 0;
+	margin: 0 0 1.5em 0;
 }
 
 header>p {
@@ -346,6 +347,7 @@ footer>p {
 	margin: 0 auto;
 	max-width: calc(100% - 50px);
 	width: 1200px;
+	height: 200px;
 }
 
 .container.medium {
@@ -462,9 +464,6 @@ footer>p {
 	margin-left: 66.66667%;
 }
 
-.row>.col-9 {
-	width: 75%;
-}
 
 .row>.off-9 {
 	margin-left: 75%;
@@ -550,9 +549,6 @@ footer>p {
 	margin-left: -25px;
 }
 
-.row>* {
-	padding: 25px 0 0 25px;
-}
 
 .row.gtr-uniform {
 	margin-top: -25px;
@@ -1016,6 +1012,11 @@ ul.actions li:first-child {
 	background: linear-gradient(135deg, #f1f1f1, #ececec);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 	margin-bottom: 0 !important;
+	  /* New rules */
+  max-width: 800px;   /* or whatever width fits your icons */
+  margin: 0 auto;     /* centers the box horizontally */
+
+
 }
 
 .box.style1 h3 {
@@ -1123,7 +1124,7 @@ ul.actions li:first-child {
 }
 
 .wrapper.style1 {
-	padding-top: 6em !important;
+	padding-top: 2em !important;
 	padding-bottom: 2em !important;
 	background-image: none;
 	background-color: #fff;
@@ -1245,24 +1246,27 @@ body>article {
 }
 
 #top .row {
-	margin-bottom: 2em;
-	/* pushes the skills section down */
+  margin: 0 auto;
+  max-width: 600px; /* keeps it from stretching too wide */
+  padding: 0;
+
 }
 
 #top .image {
 	border-radius: 100%;
-	width: 20em;
-	height: 20em;
+	max-width: 160px;
 	margin: 0;
 }
 
 #top .image img {
-	border-radius: 100%;
+	border-radius: 50%;
 }
 
 #top h1 {
-	margin-top: 0.35em;
+	font-size: 2em;
+	/* smaller name */
 }
+
 
 #top p {
 	font-size: 1.5em;
@@ -1271,6 +1275,11 @@ body>article {
 
 #top p a {
 	color: inherit;
+}
+
+#top .row>.col-9 {
+	padding: 25px;
+	margin-top: 25px;
 }
 
 #contact footer {
@@ -1444,18 +1453,11 @@ li::marker {
 .hero-title {
 	font-family: 'Poppins', 'Open Sans', sans-serif;
 	font-size: 2.5em;
-	font-weight: 600;
-	text-align: left;
-	/* centered instead of left */
-	margin: 0.5em auto 1em auto;
+	text-align: center;
 	line-height: 1.4em;
 	color: #111;
-
-	/* Sleek effect */
 	text-transform: uppercase;
-	/* all caps for impact */
 	letter-spacing: 2px;
-	/* wide spacing for a clean look */
 	position: relative;
 	display: inline-block;
 	white-space: pre-line;
@@ -1480,20 +1482,34 @@ li::marker {
 }
 
 .hero-buttons {
-  margin-top: 1em;
-  display: flex;
-  gap: 1em;
-  justify-content: flex-start; /* default: left align */
+	margin-top: 1em;
+	display: flex;
+	gap: 1em;
+	justify-content: flex-start;
+	/* default: left align */
 }
 
 /* Override for smaller screens */
 @media screen and (max-width: 980px) {
-  .hero-buttons {
-    justify-content: center; /* center align on tablet/mobile */
-  }
+	.hero-buttons {
+		justify-content: center;
+		/* center align on tablet/mobile */
+	}
 }
 
 .hero-buttons .button {
 	min-width: 140px;
 	/* consistent button size */
+}
+
+
+.image.fit img.profile-photo {
+	width: 100%;
+	max-width: 160px;
+	max-height: 160px;
+	min-width: 120px;
+	min-height: 120px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	display: block;
 }

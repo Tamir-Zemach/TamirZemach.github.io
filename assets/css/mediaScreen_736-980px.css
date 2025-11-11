@@ -1,0 +1,269 @@
+@media screen and (max-width: 980px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .container.medium {
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        align-items: stretch;
+    }
+
+    .row>* {
+        box-sizing: border-box;
+    }
+
+    .row.gtr-uniform>*> :last-child {
+        margin-bottom: 0;
+    }
+
+    .row.aln-left {
+        justify-content: flex-start;
+    }
+
+    .row.aln-center {
+        justify-content: center;
+    }
+
+    .row.aln-right {
+        justify-content: flex-end;
+    }
+
+    .row.aln-top {
+        align-items: flex-start;
+    }
+
+    .row.aln-middle {
+        align-items: center;
+    }
+
+    .row.aln-bottom {
+        align-items: flex-end;
+    }
+
+    .row>.imp-medium {
+        order: -1;
+    }
+
+    .row>.col-1-medium {
+        width: 8.33333%;
+    }
+
+    .row>.off-1-medium {
+        margin-left: 8.33333%;
+    }
+
+    .row>.col-2-medium {
+        width: 16.66667%;
+    }
+
+    .row>.off-2-medium {
+        margin-left: 16.66667%;
+    }
+
+    .row>.col-3-medium {
+        width: 25%;
+    }
+
+    .row>.off-3-medium {
+        margin-left: 25%;
+    }
+
+    .row>.col-4-medium {
+        width: 33.33333%;
+    }
+
+    .row>.off-4-medium {
+        margin-left: 33.33333%;
+    }
+
+    .row>.col-5-medium {
+        width: 41.66667%;
+    }
+
+    .row>.off-5-medium {
+        margin-left: 41.66667%;
+    }
+
+    .row>.col-6-medium {
+        width: 50%;
+    }
+
+    .row>.off-6-medium {
+        margin-left: 50%;
+    }
+
+    .row>.col-7-medium {
+        width: 58.33333%;
+    }
+
+    .row>.off-7-medium {
+        margin-left: 58.33333%;
+    }
+
+    .row>.col-8-medium {
+        width: 66.66667%;
+    }
+
+    .row>.off-8-medium {
+        margin-left: 66.66667%;
+    }
+
+    .row>.col-9-medium {
+        width: 75%;
+    }
+
+    .row>.off-9-medium {
+        margin-left: 75%;
+    }
+
+    .row>.col-10-medium {
+        width: 83.33333%;
+    }
+
+    .row>.off-10-medium {
+        margin-left: 83.33333%;
+    }
+
+    .row>.col-11-medium {
+        width: 91.66667%;
+    }
+
+    .row>.off-11-medium {
+        margin-left: 91.66667%;
+    }
+
+    .row>.col-12-medium {
+        width: 100%;
+    }
+
+    .row>.off-12-medium {
+        margin-left: 100%;
+    }
+
+    .row.gtr-0 {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .row.gtr-0>* {
+        padding: 0px 0 0 0px;
+    }
+
+    .row.gtr-0.gtr-uniform {
+        margin-top: 0px;
+    }
+
+    .row.gtr-0.gtr-uniform>* {
+        padding-top: 0px;
+    }
+
+    .row.gtr-25 {
+        margin-top: -6.25px;
+        margin-left: -6.25px;
+    }
+
+    .row.gtr-25>* {
+        padding: 6.25px 0 0 6.25px;
+    }
+
+    .row.gtr-25.gtr-uniform {
+        margin-top: -6.25px;
+    }
+
+    .row.gtr-25.gtr-uniform>* {
+        padding-top: 6.25px;
+    }
+
+    .row.gtr-50 {
+        margin-top: -12.5px;
+        margin-left: -12.5px;
+    }
+
+    .row.gtr-50>* {
+        padding: 12.5px 0 0 12.5px;
+    }
+
+    .row.gtr-50.gtr-uniform {
+        margin-top: -12.5px;
+    }
+
+    .row.gtr-50.gtr-uniform>* {
+        padding-top: 12.5px;
+    }
+
+    .row {
+        margin-top: -25px;
+        margin-left: -25px;
+    }
+
+    .row>* {
+        padding: 25px 0 0 25px;
+    }
+
+    .row.gtr-uniform {
+        margin-top: -25px;
+    }
+
+    .row.gtr-uniform>* {
+        padding-top: 25px;
+    }
+
+    .row.gtr-150 {
+        margin-top: -37.5px;
+        margin-left: -37.5px;
+    }
+
+    .row.gtr-150>* {
+        padding: 37.5px 0 0 37.5px;
+    }
+
+    .row.gtr-150.gtr-uniform {
+        margin-top: -37.5px;
+    }
+
+    .row.gtr-150.gtr-uniform>* {
+        padding-top: 37.5px;
+    }
+
+    .row.gtr-200 {
+        margin-top: -50px;
+        margin-left: -50px;
+    }
+
+    .row.gtr-200>* {
+        padding: 50px 0 0 50px;
+    }
+
+    .row.gtr-200.gtr-uniform {
+        margin-top: -50px;
+    }
+
+    .row.gtr-200.gtr-uniform>* {
+        padding-top: 50px;
+    }
+    
+#top {
+
+    padding: 5em 0;
+}
+
+#top .image {
+    margin: 0 auto 2em auto;
+}
+	#top .row {
+		max-width: 600px;
+	}
+
+}
+

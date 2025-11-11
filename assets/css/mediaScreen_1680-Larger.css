@@ -1,0 +1,5 @@
+@media screen and (min-width: 1681px) {
+  #top .row {
+    max-width: 800px;
+  }
+}
