@@ -119,17 +119,66 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Project card click → open modal
+  // Project card click > open modal
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', async () => {
       const title = card.dataset.title || card.querySelector('h3').innerText;
-      const description = card.dataset.description || card.querySelector('p')?.innerText || '';
+      const description = card.dataset.description || card.querySelector('p')?.innerText;
 
       modalTitle.textContent = title;
       modalDescription.textContent = description;
       modalMedia.innerHTML = "";
 
-      // Load mechanics
+      // --- Gameplay Footage first ---
+      if (card.dataset.gameplayVideo) {
+        const gameplayBox = document.createElement('div');
+        gameplayBox.className = 'modal-media-box';
+        gameplayBox.innerHTML = `
+        <h3 class="mechanic-title">Full Gameplay Footage</h3>
+        <video src="${card.dataset.gameplayVideo}" autoplay loop muted playsinline 
+         style="width:100%; border-radius:6px;"></video>
+        `;
+
+        // --- Inject links directly inside gameplayBox ---
+        let links = [];
+        if (card.dataset.linksSrc) {
+          links = await loadLinksForCard(card);
+        } else {
+          try { links = JSON.parse(card.dataset.links); } catch { }
+        }
+
+        if (links.length > 0) {
+          const linkContainer = document.createElement("div");
+          linkContainer.className = "modal-links";
+          links.forEach(link => {
+            const a = document.createElement("a");
+            a.href = link.url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            if (link.icon) {
+              const icon = document.createElement("i");
+              icon.classList.add("fa-brands", `fa-${link.icon}`);
+              a.appendChild(icon);
+            }
+            a.append(" " + link.label);
+            linkContainer.appendChild(a);
+          });
+          gameplayBox.appendChild(linkContainer);
+
+        }
+
+        modalMedia.appendChild(gameplayBox);
+        // Force video playback
+        const videoEl = gameplayBox.querySelector('video');
+        if (videoEl) {
+          videoEl.play().catch(err => {
+            console.warn("Autoplay prevented:", err);
+          });
+        }
+
+      }
+
+      // --- Then load mechanics with snippet buttons ---
       let mechanics = [];
       if (card.dataset.mechanicsSrc) {
         mechanics = await loadMechanicsForCard(card);
@@ -141,14 +190,16 @@ window.addEventListener('DOMContentLoaded', () => {
         const box = document.createElement('div');
         box.className = 'modal-media-box';
         box.innerHTML = `
-  <div class="mechanic">
-    <h3 class="mechanic-title">${m.title || "Mechanic"}</h3>
-    <video src="${m.video}" autoplay loop muted playsinline style="width:100%; border-radius:6px;"></video>
-    <p class="mechanic-description">${m.text || ""}</p>
-    <div class="mechanic-scripts-label">Scripts :</div>
-  </div>
-`;
+        <div class="mechanic">
+          <h3 class="mechanic-title">${m.title || "Mechanic"}</h3>
+          <video src="${m.video}" autoplay loop muted playsinline 
+                 style="width:100%; border-radius:6px;"></video>
+          <p class="mechanic-description">${m.text || ""}</p>
+          <div class="mechanic-scripts-label">Scripts:</div>
+        </div>
+      `;
 
+        // --- Snippet buttons restored ---
         if (Array.isArray(m.snippets)) {
           const buttonGroup = document.createElement('div');
           buttonGroup.className = 'snippet-group';
@@ -178,60 +229,6 @@ window.addEventListener('DOMContentLoaded', () => {
           codeBox.appendChild(sharedPre);
           codeBox.appendChild(resizeHandle);
           snippetWrapper.appendChild(codeBox);
-          // Restore drag-to-resize functionality
-          let startY, startHeight;
-
-          resizeHandle.addEventListener('mousedown', e => {
-            e.preventDefault();
-            if (!sharedPre.classList.contains('open')) {
-              sharedPre.classList.add('open');
-            }
-            if (!sharedPre.offsetHeight) {
-              sharedPre.style.height = '300px';
-            }
-            isDragging = true;
-            startY = e.clientY;
-            startHeight = sharedPre.offsetHeight;
-            document.body.style.userSelect = 'none';
-          });
-
-          resizeHandle.addEventListener('touchstart', e => {
-            e.preventDefault();
-            if (!sharedPre.classList.contains('open')) {
-              sharedPre.classList.add('open');
-            }
-            if (!sharedPre.offsetHeight) {
-              sharedPre.style.height = '300px';
-            }
-            isDragging = true;
-            startY = e.touches[0].clientY;
-            startHeight = sharedPre.offsetHeight;
-          });
-
-          window.addEventListener('mousemove', e => {
-            if (!isDragging) return;
-            const dy = e.clientY - startY;
-            const modalContent = document.querySelector('.modal-content');
-            const modalRect = modalContent.getBoundingClientRect();
-            const panelRect = sharedPre.getBoundingClientRect();
-            const availableHeight = modalRect.height - (panelRect.top - modalRect.top) - 50;
-            const next = Math.min(Math.max(120, startHeight + dy), availableHeight);
-            sharedPre.style.height = `${next}px`;
-          });
-
-          window.addEventListener('touchmove', e => {
-            if (!isDragging) return;
-            const dy = e.touches[0].clientY - startY;
-            const modalContent = document.querySelector('.modal-content');
-            const panelRect = sharedPre.getBoundingClientRect();
-            const modalRect = modalContent.getBoundingClientRect();
-            const availableHeight = modalRect.height - (panelRect.top - modalRect.top) - 50;
-            const next = Math.min(Math.max(120, startHeight + dy), availableHeight);
-            sharedPre.style.height = `${next}px`;
-          });
-
-          window.addEventListener('mouseup', stopDrag);
-          window.addEventListener('touchend', stopDrag);
 
           box.appendChild(buttonGroup);
           box.appendChild(snippetWrapper);
@@ -239,42 +236,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         modalMedia.appendChild(box);
       });
-
-      // Load links
-      let links = [];
-      if (card.dataset.linksSrc) {
-        links = await loadLinksForCard(card);
-      } else {
-        try { links = JSON.parse(card.dataset.links); } catch { }
-      }
-
-      if (links.length > 0) {
-        const linkContainer = document.createElement("div");
-        linkContainer.className = "modal-links";
-
-        links.forEach(link => {
-          const a = document.createElement("a");
-          a.href = link.url;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-
-          if (link.icon) {
-            const icon = document.createElement("i");
-            icon.classList.add("fa-brands", `fa-${link.icon}`);
-            a.appendChild(icon);
-          }
-
-          a.append(" " + link.label);
-          linkContainer.appendChild(a);
-        });
-
-        modalMedia.appendChild(linkContainer);
-
-        const topLinks = linkContainer.cloneNode(true);
-        topLinks.classList.add("modal-links-top");
-        const modalContent = modal.querySelector(".modal-content");
-        modalContent.prepend(topLinks);
-      }
 
       modal.style.display = 'block';
       document.body.classList.add('modal-open');
