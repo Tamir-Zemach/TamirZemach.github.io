@@ -232,6 +232,13 @@ body.modal-open {
 	padding: 10px;
 }
 
+.mechanics-heading {
+  font-size: 1.6em;       
+  font-weight: 700;
+  margin: 1em 0 0.5em;          
+  text-align: left;      
+}
+
 .mechanic-title {
   font-family: 'Oswald', sans-serif;
   font-size: 1.3em;

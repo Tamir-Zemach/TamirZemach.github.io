@@ -177,6 +177,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
       }
+      const mechanicsHeading = document.createElement('h2');
+      mechanicsHeading.textContent = "Mechanics";
+      mechanicsHeading.className = "mechanics-heading"; 
+      modalMedia.appendChild(mechanicsHeading);
+
 
       // --- Then load mechanics with snippet buttons ---
       let mechanics = [];
