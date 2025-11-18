@@ -61,12 +61,22 @@
 
     // Fetch snippet code
     const url = normalizeUrl(button.dataset.url);
+    console.log("Fetching snippet from:", url);
 
     fetch(url)
       .then(res => res.text())
       .then(code => {
         pre.innerHTML = '';
-        pre.insertAdjacentText('afterbegin', code);
+
+        // Create <code> element for highlight.js
+        const codeElement = document.createElement('code');
+        codeElement.className = 'language-cs'; // adjust language if needed
+        codeElement.textContent = code;
+
+        pre.appendChild(codeElement);
+
+        // Highlight the code
+        hljs.highlightElement(codeElement);
       })
       .catch(() => {
         pre.innerHTML = 'Failed to load script.';

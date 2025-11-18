@@ -5,7 +5,7 @@
   "text": "ComponentCopierTool is a Unity Editor extension for managing GameObjects. It lets you copy components between objects with options to update or replace, include Transform values, and clear components while preserving structure. This saves time and keeps projects consistent.",
   "snippets": [
     {
-      "title": "Main Script",
+      "title": "ComponentCopierTool.cs",
       "url": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool.cs"
     }
   ]
