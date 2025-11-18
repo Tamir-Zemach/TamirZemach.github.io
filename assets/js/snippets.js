@@ -1,5 +1,12 @@
 // assets/js/snippets.js
 (() => {
+  // Normalize GitHub raw URLs
+  function normalizeUrl(url) {
+    if (!url) return url;
+    // Replace refs/heads/main with just main
+    return url.replace('/refs/heads/main/', '/main/');
+  }
+
   // Toggle snippet open/close
   document.addEventListener('click', (e) => {
     const button = e.target.closest('.snippet-toggle');
@@ -54,7 +61,10 @@
     }, 100);
 
     // Fetch snippet code
-    fetch(button.dataset.url)
+    const url = normalizeUrl(button.dataset.url);
+    console.log("Fetching snippet from:", url);
+
+    fetch(url)
       .then(res => res.text())
       .then(code => {
         pre.innerHTML = '';
