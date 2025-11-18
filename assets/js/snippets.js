@@ -3,7 +3,6 @@
   // Normalize GitHub raw URLs
   function normalizeUrl(url) {
     if (!url) return url;
-    // Replace refs/heads/main with just main
     return url.replace('/refs/heads/main/', '/main/');
   }
 
@@ -62,7 +61,6 @@
 
     // Fetch snippet code
     const url = normalizeUrl(button.dataset.url);
-    console.log("Fetching snippet from:", url);
 
     fetch(url)
       .then(res => res.text())
@@ -75,7 +73,7 @@
       });
   });
 
-  // Resize handle logic
+  // Resize handle logic (mouse)
   document.addEventListener('mousedown', (e) => {
     const handle = e.target.closest('.resize-handle');
     if (!handle) return;
@@ -100,6 +98,33 @@
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
+
+  // Resize handle logic (touch)
+  document.addEventListener('touchstart', (e) => {
+    const handle = e.target.closest('.resize-handle');
+    if (!handle) return;
+
+    const codeBox = handle.parentElement;
+    const pre = codeBox.querySelector('.snippet-content');
+    if (!pre.classList.contains('open')) return;
+
+    let startY = e.touches[0].clientY;
+    let startHeight = pre.offsetHeight;
+
+    const onTouchMove = (moveEvent) => {
+      moveEvent.preventDefault(); // prevent page scroll
+      const delta = moveEvent.touches[0].clientY - startY;
+      pre.style.height = (startHeight + delta) + 'px';
+    };
+
+    const onTouchEnd = () => {
+      document.removeEventListener('touchmove', onTouchMove);
+      document.removeEventListener('touchend', onTouchEnd);
+    };
+
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+    document.addEventListener('touchend', onTouchEnd, { passive: false });
+  }, { passive: false });
 
   // Scroll redirect for modal
   const modal = document.getElementById('projectModal');
