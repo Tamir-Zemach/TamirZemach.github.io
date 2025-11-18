@@ -1,102 +1,100 @@
-/* -----------------------------------------------The project cards themselfs-----------------------------------------------*/
-/* Project Card Container Styling */
-.project-card {
-	position: relative;
-	/* new */
-	overflow: hidden;
-	/* new */
-	border-radius: 12px;
-	/* new */
-	background: #ffffff;
-	/* new */
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-	/* new */
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	/* new */
-	cursor: pointer;
-	width: 100%;
-	max-width: 400px;
-	margin: 2em auto;
-	z-index: 1;
-	/* keep cards below modal */
-
+/* -----------------------------------------------The project/tool card-----------------------------------------------*/
+/* Card container styling (projects + tools) */
+.project-card,
+.tool-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  margin: 2em auto;
+  z-index: 1;
 }
 
-.project-card:hover {
-	transform: translateY(-8px);
-	/* new */
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-	/* new */
+/* Hover effects (projects + tools) */
+.project-card:hover,
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-.project-card .image.featured {
-	position: relative;
-	display: block;
-	overflow: hidden;
-	width: 100%;
-	margin: 0;
-	will-change: transform, opacity;
-	/* Hint to Chrome */
-	transform: translateZ(0);
-	/* Force GPU layer */
-	z-index: 0;
-	/* ensure image stays behind overlays */
-
+/* Featured media container (projects + tools) */
+.project-card .image.featured,
+.tool-card .image.featured {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  z-index: 0;
 }
 
-.project-card .image.featured img {
-	display: block;
-	width: 100%;
-	height: auto;
-	transition: transform 0.3s ease;
+/* Image transform on hover (projects + tools) */
+.project-card .image.featured img,
+.tool-card .image.featured img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
-.project-card .image.featured::after {
-	content: "View Project";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.5);
-	color: #fff;
-	font-size: 1.2em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	z-index: 10;
-	pointer-events: none;
-	backface-visibility: hidden;
+.project-card:hover .image.featured img,
+.tool-card:hover .image.featured img {
+  transform: scale(1.05);
 }
 
-
-.project-card:hover .image.featured::after {
-	opacity: 1;
+/* Overlay base styles (projects + tools) */
+.project-card .image.featured::after,
+.tool-card .image.featured::after {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+  backface-visibility: hidden;
 }
 
-.project-card:hover .image.featured img {
-	transform: scale(1.05);
+/* Show overlay on hover (projects + tools) */
+.project-card:hover .image.featured::after,
+.tool-card:hover .image.featured::after {
+  opacity: 1;
 }
 
-/* Force project card images to behave consistently */
+/* Force consistent media behavior (projects + tools) */
 .project-card .image,
-.project-card .image.featured {
-	position: relative !important;
-	display: block !important;
-	overflow: hidden !important;
-	width: 100% !important;
-	margin: 0 !important;
-	left: 0 !important;
-	top: 0 !important;
-	transform: translateZ(0);
-	/* force GPU layer */
-	will-change: opacity, transform;
+.project-card .image.featured,
+.tool-card .image,
+.tool-card .image.featured {
+  position: relative !important;
+  display: block !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: translateZ(0);
+  will-change: opacity, transform;
 }
 
+/* Different overlay text per type */
+.project-card .image.featured::after { content: "View Project"; }
+.tool-card .image.featured::after    { content: "View Tool"; }
 
-/* Modal background */
+
+/* ------------------------------------------------------ Modal background  ------------------------------------------------------*/
 .modal {
 	display: none;
 	/* Hidden by default */
@@ -110,6 +108,8 @@
 	overflow-y: auto;
 	transition: opacity 0.3s ease;
 }
+
+
 
 /* ------------------------------------------------------ Modal content box  ------------------------------------------------------*/
 .modal-content {
