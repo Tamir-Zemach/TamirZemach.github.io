@@ -280,7 +280,7 @@ body.modal-open {
 
 /* Individual buttons */
 .snippet-toggle {
-	width: 180px;
+	max-width: 250px;
 	text-align: left;
 	padding: 8px 12px;
 	font-size: 0.9em;
