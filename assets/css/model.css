@@ -190,36 +190,48 @@ body.modal-open {
 	background-color: #1c1c1c;
 	border-radius: 6px;
 }
+.modal-links.bottom-links {
+  margin-top: 0;        
+  padding-top: 0;
+}
+
 
 .modal-links a {
-	color: #363636;
-	text-decoration: none;
-	font-size: 1.4em;
-	transition: color 0.2s ease;
-	display: flex;
-	align-items: center;
-	gap: 6px;
+  color: #f0f0f0;              /* lighter text for contrast */
+  text-decoration: none;
+  font-size: 1.2em;            /* slightly smaller so badges don’t overwhelm */
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;           /* add padding for button-like feel */
+  border-radius: 6px; 
 }
 
 .modal-links a:hover {
-	color: #61b89e;
-}
-
-.modal-links a .fa-unity {
-	color: #44494e;
+  color: #61b89e;              /* accent color on hover */
+  background-color: #3a3a3a;   /* brighten background on hover */
+  transform: translateY(-2px); /* slight lift effect */
 }
 
 .modal-links a .fa-youtube {
 	color: #FF0000;
 }
 
-.modal-links a .fa-github {
-	color: #686666;
+
+.modal-links a .fa-unity {
+  color: #9aa0a6;   /* lighter gray-blue */
 }
 
+.modal-links a .fa-github {
+  color: #c0c0c0;   /* light gray for contrast */
+}
 
-
-
+.modal-links a:hover .fa-unity,
+.modal-links a:hover .fa-github,
+.modal-links a:hover .fa-youtube {
+  color: #ffffff;   
+}
 
 .modal-media-box {
 	position: relative;
@@ -297,13 +309,15 @@ body.modal-open {
 
 
 .snippet-group {
-	top: 0;
-	z-index: 50;
-	/* higher than code */
-	background: #1c1c1c;
-	/* solid background */
-	padding: 10px;
-	border-radius: 6px 6px 0 0;
+  top: 0;
+  z-index: 50;
+  background: #1c1c1c;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+
+  display: flex;              /* enable flexbox */
+  justify-content: center;    /* center horizontally */
+  gap: 12px;                  /* space between buttons */
 }
 
 .snippet-content {
