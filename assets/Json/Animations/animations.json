@@ -1,0 +1,21 @@
+﻿{
+  "title": "Character Animation Tests",
+  "description": "A collection of work-in-progress animations showcasing movement and style.",
+  "animations": [
+    {
+      "title": "Idle Loop",
+      "video": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool.mp4",
+      "text": "Basic idle stance with breathing motion."
+    },
+    {
+      "title": "Run Cycle",
+      "video": "assets/Animations/RunCycle.mp4",
+      "text": "Early test of character run animation."
+    },
+    {
+      "title": "Attack Swing",
+      "video": "assets/Animations/AttackSwing.mp4",
+      "text": "Prototype attack animation with exaggerated motion."
+    }
+  ]
+}

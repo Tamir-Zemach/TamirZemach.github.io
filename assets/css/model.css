@@ -1,7 +1,9 @@
-/* -----------------------------------------------The project/tool card-----------------------------------------------*/
-/* Card container styling (projects + tools) */
-.project-card,
-.tool-card {
+/* -----------------------------------------------
+   Unified Card Styling (Projects, Tools, Animations)
+   ----------------------------------------------- */
+
+/* Shared card container */
+.card {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
@@ -15,48 +17,40 @@
     z-index: 1;
 }
 
-/* Hover effects (projects + tools) */
-.project-card:hover,
-.tool-card:hover {
+/* Hover effect */
+.card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Featured media container (projects + tools) */
-.project-card .image.featured,
-.tool-card .image.featured {
+/* Featured media container */
+.card .image.featured {
     position: relative;
     display: block;
     overflow: hidden;
     width: 100%;
     margin: 0;
-    will-change: transform, opacity;
     transform: translateZ(0);
+    will-change: transform, opacity;
     z-index: 0;
 }
 
-/* Image transform on hover (projects + tools) */
-.project-card .image.featured img,
-.tool-card .image.featured img {
+/* Image transform on hover */
+.card .image.featured img {
     display: block;
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
 }
 
-.project-card:hover .image.featured img,
-.tool-card:hover .image.featured img {
+.card:hover .image.featured img {
     transform: scale(1.05);
 }
 
-/* Overlay base styles (projects + tools) */
-.project-card .image.featured::after,
-.tool-card .image.featured::after {
+/* Overlay base styles */
+.card .image.featured::after {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     font-size: 1.2em;
@@ -70,26 +64,9 @@
     backface-visibility: hidden;
 }
 
-/* Show overlay on hover (projects + tools) */
-.project-card:hover .image.featured::after,
-.tool-card:hover .image.featured::after {
+/* Show overlay on hover */
+.card:hover .image.featured::after {
     opacity: 1;
-}
-
-/* Force consistent media behavior (projects + tools) */
-.project-card .image,
-.project-card .image.featured,
-.tool-card .image,
-.tool-card .image.featured {
-    position: relative !important;
-    display: block !important;
-    overflow: hidden !important;
-    width: 100% !important;
-    margin: 0 !important;
-    left: 0 !important;
-    top: 0 !important;
-    transform: translateZ(0);
-    will-change: opacity, transform;
 }
 
 /* Different overlay text per type */
@@ -98,10 +75,12 @@
 }
 
 .tool-card .image.featured::after {
-    content: "View Tool";
+    content: "View Tools";
 }
 
-
+.animation-card .image.featured::after {
+    content: "View Animations";
+}
 /* ------------------------------------------------------ Modal background  ------------------------------------------------------*/
 .modal {
     display: none;
