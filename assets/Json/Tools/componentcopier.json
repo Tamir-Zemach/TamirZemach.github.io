@@ -1,12 +1,50 @@
 {
-  "title": "ComponentCopierTool",
-  "description": "Unity Editor Extension",
-  "video": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool.mp4",
-  "text": "ComponentCopierTool is a Unity Editor extension for managing GameObjects. It lets you copy components between objects with options to update or replace, include Transform values, and clear components while preserving structure. This saves time and keeps projects consistent.",
-  "snippets": [
+  "title": "Unity Editor Tools",
+  "description": "Supporting scripts and extensions that improve workflow in Unity.",
+  "tools": [
     {
-      "title": "ComponentCopierTool.cs",
-      "url": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool.cs"
+      "title": "ComponentCopierTool",
+      "description": "Unity Editor Extension",
+      "video": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool.mp4",
+      "text": "ComponentCopierTool is a Unity Editor extension for managing GameObjects. It lets you copy components between objects with options to update or replace, include Transform values, and clear components while preserving structure. This saves time and keeps projects consistent.",
+      "snippets": [
+        {
+          "title": "ComponentCopierTool.cs",
+          "url": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool.cs"
+        }
+      ]
+    },
+    {
+      "title": "SceneReferenceTool",
+      "description": "Unity Editor Extension",
+      "video": "assets/EditorTools/Scene Reference/SceneReference.mp4",
+      "text": "SceneReferenceTool provides a strongly-typed way to reference scenes in Unity. It stores the scene path for runtime builds while exposing a SceneAsset field in the Inspector for drag-and-drop convenience. A custom property drawer keeps the serialized path in sync, ensuring safe and consistent scene loading without relying on fragile string names.",
+      "snippets": [
+        {
+          "title": "SceneReference.cs",
+          "url": "assets/EditorTools/Scene Reference/SceneReference.cs"
+        },
+        {
+          "title": "SceneReferenceDrawer.cs",
+          "url": "assets/EditorTools/Scene Reference/SceneReferenceDrawer.cs"
+        }
+      ]
+    },
+    {
+      "title": "TagSelectorTool",
+      "description": "Unity Editor Extension",
+      "video": "assets/EditorTools/TagSelector/Tag Selector.mp4",
+      "text": "TagSelectorTool adds a custom property attribute for selecting Unity tags directly in the Inspector. It provides a dropdown of all defined tags, supports tooltips, and ensures that string fields referencing tags remain consistent. This streamlines workflows and reduces errors when working with tag-based logic.",
+      "snippets": [
+        {
+          "title": "TagSelectorAttribute.cs",
+          "url": "assets/EditorTools/TagSelector/TagSelectorAttribute.cs"
+        },
+        {
+          "title": "TagSelectorPropertyDrawer.cs",
+          "url": "assets/EditorTools/TagSelector/TagSelectorPropertyDrawer.cs"
+        }
+      ]
     }
   ]
 }

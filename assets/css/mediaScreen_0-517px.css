@@ -4,11 +4,11 @@
         max-width: 300px;
     }
 
-    #top .row>.col-9 {
+    #top .row > .col-9 {
         margin-top: 0;
     }
 
-    .row>* {
+    .row > * {
         padding: 15px 15px 15px 15px;
     }
 

@@ -1,63 +1,63 @@
 [
-    {
-        "title": "Upgrade Popup",
-        "video": "Videos/COTA/COTAUpgradePopUp.mp4",
-        "text": "Displays a dynamic upgrade selection interface that pauses gameplay, retrieves eligible options based on rules and limits, and spawns randomized upgrade slots with smooth UI transitions.",
-        "snippets": [
-            {
-                "title": "UpgradePopup.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Buttons/Upgrade%20Popup/UpgradePopup.cs"
-            },
-            {
-                "title": "UpgradePopupConfiguration.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/main/Assets/Scripts/Configuration/UpgradePopupConfiguration.cs"
-            },
-            {
-                "title": "UpgradeEligibilityChecker.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/PopupUtil/UpgradeEligibilityChecker.cs"
-            }
-        ]
-    },
-    {
-        "title": "Unit Spawner",
-        "video": "Videos/COTA/COTAUnitSpawner.mp4",
-        "text": "Handles the full unit deployment pipeline, from queuing and validating costs to timed spawning and initialization on lanes, ensuring smooth integration between UI, economy, and battlefield logic.",
-        "snippets": [
-            {
-                "title": "UnitSpawner.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Managers/Spawners/UnitSpawner.cs"
-            },
-            {
-                "title": "UnitDeploymentQueue.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Managers/Spawners/UnitDeploymentQueue.cs"
-            },
-            {
-                "title": "UnitDeployButton.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Buttons/Deploy%20Button/UnitDeployButton.cs"
-            },
-            {
-                "title": "Deployment.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Structs/Deployment.cs"
-            }
-        ]
-    },
-    {
-        "title": "Money Flash",
-        "video": "Videos/COTA/COTAMoneyFlash.mp4",
-        "text": "Provides responsive currency feedback by animating rising values on gain and flashing the UI red with scale and shake effects when funds are insufficient. Built on reusable utility classes (UIEffects, NumberRisingUtil) that can be applied across different UI elements for consistent, scalable feedback.",
-        "snippets": [
-            {
-                "title": "MoneyTextUiDisplay.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Text%20Display/MoneyTextUiDisplay.cs"
-            },
-            {
-                "title": "UIEffects.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/EffectsUtil/UIEffects.cs"
-            },
-            {
-                "title": "NumberRisingUtil.cs",
-                "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/NumberRisingUtil.cs"
-            }
-        ]
-    }
+  {
+    "title": "Upgrade Popup",
+    "video": "Videos/COTA/COTAUpgradePopUp.mp4",
+    "text": "Displays a dynamic upgrade selection interface that pauses gameplay, retrieves eligible options based on rules and limits, and spawns randomized upgrade slots with smooth UI transitions.",
+    "snippets": [
+      {
+        "title": "UpgradePopup.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Buttons/Upgrade%20Popup/UpgradePopup.cs"
+      },
+      {
+        "title": "UpgradePopupConfiguration.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/main/Assets/Scripts/Configuration/UpgradePopupConfiguration.cs"
+      },
+      {
+        "title": "UpgradeEligibilityChecker.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/PopupUtil/UpgradeEligibilityChecker.cs"
+      }
+    ]
+  },
+  {
+    "title": "Unit Spawner",
+    "video": "Videos/COTA/COTAUnitSpawner.mp4",
+    "text": "Handles the full unit deployment pipeline, from queuing and validating costs to timed spawning and initialization on lanes, ensuring smooth integration between UI, economy, and battlefield logic.",
+    "snippets": [
+      {
+        "title": "UnitSpawner.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Managers/Spawners/UnitSpawner.cs"
+      },
+      {
+        "title": "UnitDeploymentQueue.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Managers/Spawners/UnitDeploymentQueue.cs"
+      },
+      {
+        "title": "UnitDeployButton.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Buttons/Deploy%20Button/UnitDeployButton.cs"
+      },
+      {
+        "title": "Deployment.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Structs/Deployment.cs"
+      }
+    ]
+  },
+  {
+    "title": "Money Flash",
+    "video": "Videos/COTA/COTAMoneyFlash.mp4",
+    "text": "Provides responsive currency feedback by animating rising values on gain and flashing the UI red with scale and shake effects when funds are insufficient. Built on reusable utility classes (UIEffects, NumberRisingUtil) that can be applied across different UI elements for consistent, scalable feedback.",
+    "snippets": [
+      {
+        "title": "MoneyTextUiDisplay.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/Ui/Text%20Display/MoneyTextUiDisplay.cs"
+      },
+      {
+        "title": "UIEffects.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/EffectsUtil/UIEffects.cs"
+      },
+      {
+        "title": "NumberRisingUtil.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/Age-Of-War-Code-Project/refs/heads/main/Assets/Scripts/BackEnd/Utilities/NumberRisingUtil.cs"
+      }
+    ]
+  }
 ]

@@ -2,75 +2,78 @@
 /* Card container styling (projects + tools) */
 .project-card,
 .tool-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  width: 100%;
-  max-width: 400px;
-  margin: 2em auto;
-  z-index: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    margin: 2em auto;
+    z-index: 1;
 }
 
 /* Hover effects (projects + tools) */
 .project-card:hover,
 .tool-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 /* Featured media container (projects + tools) */
 .project-card .image.featured,
 .tool-card .image.featured {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  margin: 0;
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  z-index: 0;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    z-index: 0;
 }
 
 /* Image transform on hover (projects + tools) */
 .project-card .image.featured img,
 .tool-card .image.featured img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover .image.featured img,
 .tool-card:hover .image.featured img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* Overlay base styles (projects + tools) */
 .project-card .image.featured::after,
 .tool-card .image.featured::after {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-  pointer-events: none;
-  backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    pointer-events: none;
+    backface-visibility: hidden;
 }
 
 /* Show overlay on hover (projects + tools) */
 .project-card:hover .image.featured::after,
 .tool-card:hover .image.featured::after {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Force consistent media behavior (projects + tools) */
@@ -78,322 +81,325 @@
 .project-card .image.featured,
 .tool-card .image,
 .tool-card .image.featured {
-  position: relative !important;
-  display: block !important;
-  overflow: hidden !important;
-  width: 100% !important;
-  margin: 0 !important;
-  left: 0 !important;
-  top: 0 !important;
-  transform: translateZ(0);
-  will-change: opacity, transform;
+    position: relative !important;
+    display: block !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: translateZ(0);
+    will-change: opacity, transform;
 }
 
 /* Different overlay text per type */
-.project-card .image.featured::after { content: "View Project"; }
-.tool-card .image.featured::after    { content: "View Tool"; }
+.project-card .image.featured::after {
+    content: "View Project";
+}
+
+.tool-card .image.featured::after {
+    content: "View Tool";
+}
 
 
 /* ------------------------------------------------------ Modal background  ------------------------------------------------------*/
 .modal {
-	display: none;
-	/* Hidden by default */
-	position: fixed;
-	z-index: 9999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.85);
-	overflow-y: auto;
-	transition: opacity 0.3s ease;
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
 }
-
 
 
 /* ------------------------------------------------------ Modal content box  ------------------------------------------------------*/
 .modal-content {
-	background: #1c1c1c;
-	color: #fff;
-	margin: 5% auto;
-	padding: 20px;
-	border-radius: 8px;
-	max-width: 800px;
-	width: 90%;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    background: #1c1c1c;
+    color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 
-	max-height: 80vh;
-	/* contain within viewport */
-	overflow-y: scroll;
-	/* allow scrolling */
-	scrollbar-width: none;
-	/* Firefox */
-	-ms-overflow-style: none;
-	/* IE/Edge */
+    max-height: 80vh;
+    /* contain within viewport */
+    overflow-y: scroll;
+    /* allow scrolling */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
 
-	position: relative;
-	/* ensures sticky positioning has a reference */
+    position: relative;
+    /* ensures sticky positioning has a reference */
 
 }
 
 .modal-content::-webkit-scrollbar {
-	display: none;
-	/* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 /* Prevent background scroll when modal is open */
 body.modal-open {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 /* Close button */
 .modal-close {
-	float: right;
-	font-size: 28px;
-	cursor: pointer;
-	color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
 }
 
 .modal-close:hover {
-	color: #fff;
+    color: #fff;
 }
-
 
 
 /* Media inside modal */
 #modalMedia video {
-	width: 50%;
-	/* shrink to 70% of modal width */
-	max-width: 500px;
-	/* cap at 500px */
-	display: block;
-	/* so margin auto works */
-	margin: 15px auto;
-	/* centers horizontally */
-	border-radius: 6px;
+    width: 50%;
+    /* shrink to 70% of modal width */
+    max-width: 500px;
+    /* cap at 500px */
+    display: block;
+    /* so margin auto works */
+    margin: 15px auto;
+    /* centers horizontally */
+    border-radius: 6px;
 }
 
 #modalMedia img {
-	width: 100%;
-	/* keep images full width if you like */
-	border-radius: 6px;
-	margin-top: 15px;
+    width: 100%;
+    /* keep images full width if you like */
+    border-radius: 6px;
+    margin-top: 15px;
 }
 
 .modal-links {
-	display: flex;
-	justify-content: center;
-	gap: 40px;
-	margin-top: 40px;
-	padding-bottom: 10px;
-	padding-top: 10px;
-	background-color: #1c1c1c;
-	border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #1c1c1c;
+    border-radius: 6px;
 }
+
 .modal-links.bottom-links {
-  margin-top: 0;        
-  padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 
 .modal-links a {
-  color: #f0f0f0;              /* lighter text for contrast */
-  text-decoration: none;
-  font-size: 1.2em;            /* slightly smaller so badges don’t overwhelm */
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;           /* add padding for button-like feel */
-  border-radius: 6px; 
+    color: #f0f0f0; /* lighter text for contrast */
+    text-decoration: none;
+    font-size: 1.2em; /* slightly smaller so badges don’t overwhelm */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px; /* add padding for button-like feel */
+    border-radius: 6px;
 }
 
 .modal-links a:hover {
-  color: #61b89e;              /* accent color on hover */
-  background-color: #3a3a3a;   /* brighten background on hover */
-  transform: translateY(-2px); /* slight lift effect */
+    color: #61b89e; /* accent color on hover */
+    background-color: #3a3a3a; /* brighten background on hover */
+    transform: translateY(-2px); /* slight lift effect */
 }
 
 .modal-links a .fa-youtube {
-	color: #FF0000;
+    color: #FF0000;
 }
 
 
 .modal-links a .fa-unity {
-  color: #9aa0a6;   /* lighter gray-blue */
+    color: #9aa0a6; /* lighter gray-blue */
 }
 
 .modal-links a .fa-github {
-  color: #c0c0c0;   /* light gray for contrast */
+    color: #c0c0c0; /* light gray for contrast */
 }
 
 .modal-links a:hover .fa-unity,
 .modal-links a:hover .fa-github,
 .modal-links a:hover .fa-youtube {
-  color: #ffffff;   
+    color: #ffffff;
 }
 
 .modal-media-box {
-	position: relative;
-	overflow: visible;
-	margin-bottom: 2em;
-	/* spacing between sections */
-	background: #2a2a2a;
-	/* optional: give each section its own box feel */
-	border-radius: 6px;
-	padding: 10px;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 2em;
+    /* spacing between sections */
+    background: #2a2a2a;
+    /* optional: give each section its own box feel */
+    border-radius: 6px;
+    padding: 10px;
 }
 
 .mechanics-heading {
-  font-size: 1.6em;       
-  font-weight: 700;
-  margin: 1em 0 0.5em;          
-  text-align: left;      
+    font-size: 1.6em;
+    font-weight: 700;
+    margin: 1em 0 0.5em;
+    text-align: left;
 }
 
 .mechanic-title {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.3em;
-  font-weight: 700;
-  margin-bottom: 0.3em;
-  color: #ffffff;
-  text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 0.3em;
+    color: #ffffff;
+    text-align: center;
 }
 
 .mechanic-description {
-	font-size: 1em;
-	line-height: 1.5;
-	margin-bottom: 0.5em;
-	color: #7e7e7e;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    color: #7e7e7e;
 }
 
 .mechanic-scripts-label {
-	font-size: 0.9em;
-	font-weight: 600;
-	text-transform: uppercase;
-	margin-bottom: 0.5em;
-	color: #dfdfdf;
-	letter-spacing: 0.5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    color: #dfdfdf;
+    letter-spacing: 0.5px;
 }
-
 
 
 /* Individual buttons */
 .snippet-toggle {
-	max-width: 250px;
-	text-align: left;
-	padding: 8px 12px;
-	font-size: 0.9em;
-	background-color: transparent;
-	color: #aaa;
-	border: 1px solid #444;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: all 0.2s ease-in-out;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    max-width: 250px;
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    background-color: transparent;
+    color: #aaa;
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .snippet-toggle:hover {
-	color: #fff;
-	border-color: #666;
+    color: #fff;
+    border-color: #666;
 }
 
 .snippet-toggle.active {
-	background-color: #1e90ff;
-	/* bright blue */
-	color: #fff;
-	border-color: #1e90ff;
+    background-color: #1e90ff;
+    /* bright blue */
+    color: #fff;
+    border-color: #1e90ff;
 }
 
 
 .snippet-group {
-  top: 0;
-  z-index: 50;
-  background: #1c1c1c;
-  padding: 10px;
-  border-radius: 6px 6px 0 0;
+    top: 0;
+    z-index: 50;
+    background: #1c1c1c;
+    padding: 10px;
+    border-radius: 6px 6px 0 0;
 
-  display: flex;              /* enable flexbox */
-  justify-content: center;    /* center horizontally */
-  gap: 12px;                  /* space between buttons */
+    display: flex; /* enable flexbox */
+    justify-content: center; /* center horizontally */
+    gap: 12px; /* space between buttons */
 }
 
 .snippet-content {
-	margin-top: 0;
-	/* flush under buttons */
-	position: relative;
-	z-index: 1;
-	/* below toolbar */
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
-	visibility: hidden;
-	transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-	background: #222;
-	color: #eee;
-	border-radius: 0 0 6px 6px;
-	font-family: monospace;
-	white-space: pre-wrap;
-	padding: 0;
+    margin-top: 0;
+    /* flush under buttons */
+    position: relative;
+    z-index: 1;
+    /* below toolbar */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    background: #222;
+    color: #eee;
+    border-radius: 0 0 6px 6px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    padding: 0;
 
 }
 
 .snippet-content.open {
-	max-height: 600px;
-	padding: 1em;
-	overflow-y: auto;
-	/* scroll inside code */
-	opacity: 1;
-	visibility: visible;
+    max-height: 600px;
+    padding: 1em;
+    overflow-y: auto;
+    /* scroll inside code */
+    opacity: 1;
+    visibility: visible;
 }
 
 .code-box {
-	position: relative;
+    position: relative;
 }
 
 .resize-handle {
 
-	cursor: ns-resize;
-	/* up/down resize cursor */
-	pointer-events: auto;
-	opacity: 0.4;
-	z-index: 10;
+    cursor: ns-resize;
+    /* up/down resize cursor */
+    pointer-events: auto;
+    opacity: 0.4;
+    z-index: 10;
 
-	/* Button-like styling */
-	display: none;
-	align-items: center;
-	justify-content: center;
+    /* Button-like styling */
+    display: none;
+    align-items: center;
+    justify-content: center;
 
-	width: 100px;
-	height: 30px;
-	margin: 10px auto 0;
-	border-radius: 6px;
-	background-color: #2a2a2a;
-	/* dark modal tone */
-	color: #aaa;
-	font-size: 16px;
+    width: 100px;
+    height: 30px;
+    margin: 10px auto 0;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    /* dark modal tone */
+    color: #aaa;
+    font-size: 16px;
 
-	border: 1px solid #444;
-	touch-action: none;
-	user-select: none;
-	transition: all 0.2s ease-in-out;
+    border: 1px solid #444;
+    touch-action: none;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
 
 }
 
-.snippet-content.open+.resize-handle:hover {
-	background-color: #1e90ff;
-	color: #fff;
-	border-color: #1e90ff;
+.snippet-content.open + .resize-handle:hover {
+    background-color: #1e90ff;
+    color: #fff;
+    border-color: #1e90ff;
 }
 
-.snippet-content.open+.resize-handle {
-	display: flex;
-	pointer-events: auto;
-	opacity: 1;
-	cursor: ns-resize;
-	color: #fff;
-	background-color: #3a3a3a;
-	border-color: #666;
+.snippet-content.open + .resize-handle {
+    display: flex;
+    pointer-events: auto;
+    opacity: 1;
+    cursor: ns-resize;
+    color: #fff;
+    background-color: #3a3a3a;
+    border-color: #666;
 }

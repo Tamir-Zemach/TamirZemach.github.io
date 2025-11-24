@@ -1,17 +1,17 @@
 [
-      {
-        "label": "Unity",
-        "url": "https://play.unity.com/en/games/126530bd-9cbf-4c9b-94db-215b7a5b1a96/clash-of-the-ages",
-        "icon": "unity"
-      },
-      {
-        "label": "YouTube",
-        "url": "https://www.youtube.com/watch?v=XuANyQ-TnZw",
-        "icon": "youtube"
-      },
-      {
-        "label": "GitHub",
-        "url": "https://github.com/Tamir-Zemach/Clash-Of-The-Ages",
-        "icon": "github"
-      }
-    ]
+  {
+    "label": "Unity",
+    "url": "https://play.unity.com/en/games/126530bd-9cbf-4c9b-94db-215b7a5b1a96/clash-of-the-ages",
+    "icon": "unity"
+  },
+  {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/watch?v=XuANyQ-TnZw",
+    "icon": "youtube"
+  },
+  {
+    "label": "GitHub",
+    "url": "https://github.com/Tamir-Zemach/Clash-Of-The-Ages",
+    "icon": "github"
+  }
+]

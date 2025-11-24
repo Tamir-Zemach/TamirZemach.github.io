@@ -91,5 +91,5 @@
     });
 
     // Expose helpers (optional)
-    window.LinksHelpers = { loadLinksInto, renderLinks, buildLinkBadge };
+    window.LinksHelpers = {loadLinksInto, renderLinks, buildLinkBadge};
 })();

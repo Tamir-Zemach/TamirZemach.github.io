@@ -1,46 +1,46 @@
 [
+  {
+    "title": "Dash Drill",
+    "video": "Videos/ScrewMan/ScrewManDashJump.mp4",
+    "text": "Launches the player downward in a high speed burst, tunneling through the ground while ignoring obstacles, then erupting back out with force to continue movement.",
+    "snippets": [
       {
-        "title": "Dash Drill",
-        "video": "Videos/ScrewMan/ScrewManDashJump.mp4",
-        "text": "Launches the player downward in a high speed burst, tunneling through the ground while ignoring obstacles, then erupting back out with force to continue movement.",
-        "snippets": [
-          {
-            "title": "DashFunctions.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/main/Assets/Scripts/Player/DashFunctions.cs"
-          }
-        ]
-      },
-      {
-        "title": "Camera Transition",
-        "video": "Videos/ScrewMan/ScrewManCameraTransition.mp4",
-        "text": "Manages smooth transitions between the default and special zone cameras, adjusting framing based on player direction and adding shake effects for impact.",
-        "snippets": [
-          {
-            "title": "CameraController.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Triggers/CameraController.cs"
-          }
-        ]
-      },
-      {
-        "title": "Ragdoll",
-        "video": "Videos/ScrewMan/ScrewManRagdoll.mp4",
-        "text": "Replaces defeated enemies with a physics-driven ragdoll, applying random forces and spin for dynamic death animations before fading out.",
-        "snippets": [
-          {
-            "title": "Ragdoll.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Enemies/Ragdoll.cs"
-          }
-        ]
-      },
-      {
-        "title": "Static Turret",
-        "video": "Videos/ScrewMan/ScrewManStaticTurret.mp4",
-        "text": "Implements a stationary enemy that continuously fires projectiles, reacts to player attacks with hit feedback, and transitions into a destroyed state when defeated.",
-        "snippets": [
-          {
-            "title": "StaticTurret.cs",
-            "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Enemies/StaticTurret.cs"
-          }
-        ]
+        "title": "DashFunctions.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/main/Assets/Scripts/Player/DashFunctions.cs"
       }
     ]
+  },
+  {
+    "title": "Camera Transition",
+    "video": "Videos/ScrewMan/ScrewManCameraTransition.mp4",
+    "text": "Manages smooth transitions between the default and special zone cameras, adjusting framing based on player direction and adding shake effects for impact.",
+    "snippets": [
+      {
+        "title": "CameraController.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Triggers/CameraController.cs"
+      }
+    ]
+  },
+  {
+    "title": "Ragdoll",
+    "video": "Videos/ScrewMan/ScrewManRagdoll.mp4",
+    "text": "Replaces defeated enemies with a physics-driven ragdoll, applying random forces and spin for dynamic death animations before fading out.",
+    "snippets": [
+      {
+        "title": "Ragdoll.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Enemies/Ragdoll.cs"
+      }
+    ]
+  },
+  {
+    "title": "Static Turret",
+    "video": "Videos/ScrewMan/ScrewManStaticTurret.mp4",
+    "text": "Implements a stationary enemy that continuously fires projectiles, reacts to player attacks with hit feedback, and transitions into a destroyed state when defeated.",
+    "snippets": [
+      {
+        "title": "StaticTurret.cs",
+        "url": "https://raw.githubusercontent.com/Tamir-Zemach/ScrewMan/refs/heads/main/Assets/Scripts/Enemies/StaticTurret.cs"
+      }
+    ]
+  }
+]

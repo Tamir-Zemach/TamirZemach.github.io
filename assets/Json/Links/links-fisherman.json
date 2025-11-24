@@ -1,17 +1,17 @@
 [
-      {
-        "label": "Unity",
-        "url": "https://play.unity.com/en/games/5b3ea9cc-c324-4a72-9772-06f8680892e2/a-fishermans-memories",
-        "icon": "unity"
-      },
-      {
-        "label": "YouTube",
-        "url": "https://www.youtube.com/watch?v=lHVjwoLgg7M",
-        "icon": "youtube"
-      },
-      {
-        "label": "GitHub",
-        "url": "https://github.com/Tamir-Zemach/A-Fishermans-Memories",
-        "icon": "github"
-      }
-    ]
+  {
+    "label": "Unity",
+    "url": "https://play.unity.com/en/games/5b3ea9cc-c324-4a72-9772-06f8680892e2/a-fishermans-memories",
+    "icon": "unity"
+  },
+  {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/watch?v=lHVjwoLgg7M",
+    "icon": "youtube"
+  },
+  {
+    "label": "GitHub",
+    "url": "https://github.com/Tamir-Zemach/A-Fishermans-Memories",
+    "icon": "github"
+  }
+]
