@@ -207,7 +207,7 @@ a {
     -webkit-transition: color .2s ease-in-out;
     -ms-transition: color .2s ease-in-out;
     transition: color .2s ease-in-out;
-    color: #ffffff;
+    color: #2c2828;
     text-decoration: underline;
 }
 
@@ -965,6 +965,7 @@ ul.social li a.fa-vimeo {
     background-color: #fafafa;
 }
 
+
 ul.social li a:hover {
     top: -5px;
 }
@@ -983,7 +984,13 @@ ul.social li a.fa-github:hover:before {
 ul.social li a.fa-unity:hover:before {
     background-color: #ffffff; /* Unity dark */
 }
+ul.social li a.fa-envelope:hover:before {
+    background-color: #ff0000; /* Gmail red tone */
+}
 
+.email-icon {
+    position: relative;
+}
 
 /* Actions */
 
