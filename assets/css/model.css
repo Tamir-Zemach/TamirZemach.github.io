@@ -6,16 +6,25 @@
 .card {
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    background: rgba(235, 222, 222, 0.4); /* slightly more opaque */
+    box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.2),
+            0 0 0 1px rgba(255, 255, 255, 0.3); /* subtle border glow */
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     width: 100%;
     max-width: 400px;
     margin: 2em auto;
     z-index: 1;
+
+    backdrop-filter: blur(6px); /* stronger glassy effect */
+    padding: 1.5em;
+    text-align: center;
+    border: 5px solid rgba(255, 255, 255, 0.3);
 }
+
 
 /* Hover effect */
 .card:hover {
@@ -81,6 +90,19 @@
 .animation-card .image.featured::after {
     content: "View Animations";
 }
+
+.preview-video {
+    width: 100%;
+    border-radius: 6px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optional depth */
+}
+
+.preview-video:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 /* ------------------------------------------------------ Modal background  ------------------------------------------------------*/
 .modal {
     display: none;
