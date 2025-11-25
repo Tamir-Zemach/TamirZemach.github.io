@@ -1004,7 +1004,7 @@ ul.actions li:first-child {
     padding: 1.5em 2em 1.5em 2em;
     text-align: center;
     border-radius: 12px;
-    background: linear-gradient(135deg, #f1f1f1, #ececec);
+    background-color: #dfdfdf;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 0 !important;
     /* New rules */
@@ -1106,37 +1106,60 @@ ul.actions li:first-child {
     color: #2c2828;
 }
 
+/* Global page background */
+body {
+    background: linear-gradient(to bottom, #ed683f, #e3b53c);
+    background-attachment: fixed; /* keeps gradient anchored while scrolling */
+    color: #fff; /* adjust text color for contrast 
+    color: #e3b53c;
+    */
+
+}
 /* Wrappers */
 
 .wrapper {
-    background-image: url("images/bg.png");
-    box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
     padding: 2em 0 2em 0;
     text-align: center;
+    transition: background 0.8s ease;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: inherit; /* inherits from body */
+    box-shadow: inset 0px 4px 8px rgba(0,0,0,0.15),
+    inset 0px -4px 8px rgba(0,0,0,0.1)
+
+
 }
 
+.wrapper:hover {
+    background-position: right center;
+}
+
+/* Hero / Intro Section 
 .wrapper.style1 {
-    padding-top: 0 !important;
-    padding-bottom: 2em !important;
-    background-image: none;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #E34C1C, #E3B01C);
+    color: #fff;
 }
 
+/* Tools Section 
 .wrapper.style2 {
-    background-color: #fafafa;
-    text-shadow: 1px 1px 0px #fff;
+    background: linear-gradient(to bottom, #E3B01C, #E31C4F);
+    color: #3e3e3e;
 }
 
+/* Projects Section 
 .wrapper.style3 {
-    background-color: #f4f4f4;
-    text-shadow: 1px 1px 0px #fff;
+    background: linear-gradient(to bottom, #E31C4F, #F58CA0, #FFE5EC);
+    color: #3e3e3e;
 }
 
+
+/* About Me / Footer 
 .wrapper.style4 {
-    background-color: #303030;
-    color: #999;
-    text-shadow: -1px -1px 0px #181818;
+    background-color: #1c1c1c;
+    color: #fff;
 }
+
+ */
 
 .wrapper.style4 h1,
 .wrapper.style4 h2,
@@ -1233,7 +1256,7 @@ body > article {
 }
 
 #top {
-    padding: 10em 0 10em 0;
+    padding-top: 0;
     text-align: left;
 }
 
@@ -1367,17 +1390,14 @@ li::marker {
 }
 
 .about-section {
-    background: #e7e7e7 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: 2em auto;
-    /* reduced vertical margin */
     max-width: 900px;
-    /* slightly narrower */
     text-align: center;
     font-family: 'Poppins', 'Open Sans', sans-serif;
     padding: 2em 1.5em;
-    /* add padding control if needed */
+    background-color: #1c1c1c;
 }
 
 .about-section h2 {
@@ -1395,13 +1415,13 @@ li::marker {
     /* slightly smaller text */
     line-height: 1.6em;
     /* tighter line spacing */
-    color: #333;
+    color: #ffffff;
     margin-bottom: 1em;
     /* reduced spacing between paragraphs */
 }
 
 .about-section strong {
-    color: #000000;
+    color: #8193e1;
     font-weight: 600;
 }
 

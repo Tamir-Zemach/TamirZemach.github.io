@@ -382,8 +382,6 @@
 
     .box .image.featured {
         position: relative;
-        left: 20px;
-        top: 20px;
         margin: -50px 0 50px -40px;
         width: auto;
     }
@@ -421,20 +419,8 @@
     #nav a:hover {
         background-color: transparent;
     }
-
-    /* Articles */
-    #top {
-        padding: 3em 0;
-    }
-
-    #top .image {
-        margin-bottom: 0;
-    }
-
-    #top p {
-        font-size: 1em;
-    }
-
+    
+    
     #contact footer {
         margin: 0;
     }
@@ -514,7 +500,6 @@
     }
 
     #top {
-        padding: 10em 0 10em 0;
         text-align: center;
     }
 
@@ -527,6 +512,15 @@
     #top .row > .col-9 {
         margin-top: 25px;
     }
+    
+    #top .image {
+        margin-bottom: 0;
+    }
+
+    #top p {
+        font-size: 1em;
+    }
+
 
     .about-section {
         max-width: 500px;
