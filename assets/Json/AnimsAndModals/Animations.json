@@ -1,0 +1,21 @@
+﻿{
+  "title": "Animations",
+  "description": "Animations.",
+  "animations": [
+    {
+      "title": "Character Animations",
+      "video": "assets/Animations/ScrewManAnims.mp4",
+      "text": "Character Animations."
+    },
+    {
+      "title": "UI Animations",
+      "video": "assets/Animations/UIAnimations.mp4",
+      "text": "UI."
+    },
+    {
+      "title": "Photoshop",
+      "video": "assets/Animations/ScrewManPhotoshop.mp4",
+      "text": "Photoshop."
+    }
+  ]
+}
