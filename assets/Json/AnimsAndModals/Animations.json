@@ -1,21 +1,21 @@
 ﻿{
   "title": "Animations",
-  "description": "Animations.",
+  "description": "A peek into my design and animation work.",
   "animations": [
     {
       "title": "Character Animations",
       "video": "assets/Animations/ScrewManAnims.mp4",
-      "text": "Character Animations."
+      "text": "Watch my characters come to life with smooth, playful animations."
     },
     {
       "title": "UI Animations",
       "video": "assets/Animations/UIAnimations.mp4",
-      "text": "UI."
+      "text": "See how I bring interfaces to life with clean, simple motion."
     },
     {
       "title": "Photoshop",
       "video": "assets/Animations/ScrewManPhotoshop.mp4",
-      "text": "Photoshop."
+      "text": "Take a look at the 2D character parts I built and arranged in Photoshop."
     }
   ]
 }

@@ -1,21 +1,21 @@
 ﻿{
   "title": "Modals",
-  "description": "Modals.",
+  "description": "Exploring my 3D modeling process.",
   "animations": [
     {
       "title": "Units & References",
       "video": "assets/Modals/Reference.mp4",
-      "text": "References."
+      "text": "Showing the 3D models lined up with their reference designs."
     },
     {
       "title": "Uv",
       "video": "assets/Modals/Uv.mp4",
-      "text": "Uv."
+      "text": "Fixing and cleaning up the UVs."
     },
     {
       "title": "Rigging",
       "video": "assets/Modals/Rigging.mp4",
-      "text": "Rigging."
+      "text": "Demonstrating the custom rig I built for the character."
     }
   ]
 }

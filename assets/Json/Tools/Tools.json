@@ -1,12 +1,12 @@
 {
   "title": "Unity Editor Tools",
-  "description": "Supporting scripts and extensions that improve workflow in Unity.",
+  "description": "Scripts and extensions that make Unity workflows easier.",
   "tools": [
     {
       "title": "ComponentCopierTool",
       "description": "Unity Editor Extension",
       "video": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool1280x720.mp4",
-      "text": "ComponentCopierTool is a Unity Editor extension for managing GameObjects. It lets you copy components between objects with options to update or replace, include Transform values, and clear components while preserving structure. This saves time and keeps projects consistent.",
+      "text": "Copy and manage components between GameObjects quickly while keeping structure intact.",
       "snippets": [
         {
           "title": "ComponentCopierTool.cs",
@@ -18,7 +18,7 @@
       "title": "SceneReferenceTool",
       "description": "Unity Editor Extension",
       "video": "assets/EditorTools/Scene Reference/SceneReference.mp4",
-      "text": "SceneReferenceTool provides a strongly-typed way to reference scenes in Unity. It stores the scene path for runtime builds while exposing a SceneAsset field in the Inspector for drag-and-drop convenience. A custom property drawer keeps the serialized path in sync, ensuring safe and consistent scene loading without relying on fragile string names.",
+      "text": "A safer way to reference scenes with drag‑and‑drop support and synced paths.",
       "snippets": [
         {
           "title": "SceneReference.cs",
@@ -34,7 +34,7 @@
       "title": "TagSelectorTool",
       "description": "Unity Editor Extension",
       "video": "assets/EditorTools/TagSelector/Tag Selector.mp4",
-      "text": "TagSelectorTool adds a custom property attribute for selecting Unity tags directly in the Inspector. It provides a dropdown of all defined tags, supports tooltips, and ensures that string fields referencing tags remain consistent. This streamlines workflows and reduces errors when working with tag-based logic.",
+      "text": "Select Unity tags from the Inspector dropdown to keep things error-free.",
       "snippets": [
         {
           "title": "TagSelectorAttribute.cs",
@@ -48,4 +48,3 @@
     }
   ]
 }
-
