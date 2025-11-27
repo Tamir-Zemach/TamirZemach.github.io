@@ -1,0 +1,21 @@
+﻿{
+  "title": "Modals",
+  "description": "Modals.",
+  "animations": [
+    {
+      "title": "Units & References",
+      "video": "assets/Modals/Reference.mp4",
+      "text": "References."
+    },
+    {
+      "title": "Uv",
+      "video": "assets/Modals/Uv.mp4",
+      "text": "Uv."
+    },
+    {
+      "title": "Rigging",
+      "video": "assets/Modals/Rigging.mp4",
+      "text": "Rigging."
+    }
+  ]
+}
