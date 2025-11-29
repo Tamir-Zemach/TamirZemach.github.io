@@ -61,7 +61,7 @@
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    color: #67bab6;
+    color: rgba(103, 186, 182, 0.9);
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
@@ -263,7 +263,7 @@ body.modal-open {
 .modal-title {
     font-size: 1.8rem;       /* Larger text */
     font-weight: bold;       /* Strong emphasis */
-    color: rgba(251, 203, 127, 0.7);          /* Dark slate color */
+    color: rgba(255, 255, 255);          /* Dark slate color */
     text-align: center;      /* Centered in modal */
     margin-bottom: 1rem;     /* Space below */
     letter-spacing: 1px;     /* Slight spacing for elegance */

@@ -1123,18 +1123,18 @@ ul.actions li:first-child {
 }
 
 .icon.brands.fa-unity {
-    color: #2c2828;
+    color: #323232;
+    background-color: #7c7878;
 }
-
+.icon.fa-envelope {
+    color: #323232;
+    background-color: #e83232;
+}
 /* Global page background */
 body {
-    /*background: linear-gradient(to bottom, #fff5ed, #ffffff);
-    background-attachment: fixed; */
+
     background-color: #fff5ed ;
-    color: #351818; /* adjust text color for contrast 
-    
-    color: #e3b53c;
-    */
+    color: #351818; /* adjust text color for contrast */
 
 }
 /* Wrappers */
