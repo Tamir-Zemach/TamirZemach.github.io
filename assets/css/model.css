@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 16px;
-    background: rgba(235, 222, 222, 0.4); /* slightly more opaque */
+    background-color: #e6c28b4f; /* slightly more opaque */
     box-shadow:
             0 10px 30px rgba(0, 0, 0, 0.2),
             0 0 0 1px rgba(255, 255, 255, 0.3); /* subtle border glow */
@@ -22,7 +22,7 @@
     backdrop-filter: blur(6px); /* stronger glassy effect */
     padding: 1.5em;
     text-align: center;
-    border: 5px solid rgba(255, 255, 255, 0.3);
+    border: 5px solid #67bab670;
 }
 
 

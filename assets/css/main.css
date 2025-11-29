@@ -884,7 +884,7 @@ ul.social li a {
 
 ul.social li a:before {
     transition: background-color 0.2s ease-in-out;
-    background-color: #ed593f;
+    background-color: #67bab6;
     border-radius: 6px;
     box-shadow:
             inset 0 0 0 1px rgba(40, 40, 40, 0.6),
@@ -1021,9 +1021,9 @@ ul.actions li:first-child {
 .box.style1 {
     padding: 2em 2.5em;
     text-align: center;
-    border: 5px solid rgba(255, 255, 255, 0.3);
+    border: 5px solid #67bab670;
     border-radius: 16px;
-    background-color: rgba(235, 222, 222, 0.3);
+    background-color: #e6c28b4f;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.4);
     margin-bottom: 2em;
@@ -1127,9 +1127,10 @@ ul.actions li:first-child {
 
 /* Global page background */
 body {
-    background: linear-gradient(to bottom, #e3b53c, #ff775f);
-    background-attachment: fixed; /* keeps gradient anchored while scrolling */
-    color: #332a2a; /* adjust text color for contrast 
+    /*background: linear-gradient(to bottom, #fff5ed, #ffffff);
+    background-attachment: fixed; */
+    background-color: #fff5ed ;
+    color: #351818; /* adjust text color for contrast 
     
     color: #e3b53c;
     */
@@ -1209,7 +1210,7 @@ body {
 /* Nav */
 
 #nav {
-    background-color: #282828;
+    background-color: #67bab6;
     text-align: center;
     position: fixed;
     left: 0;
@@ -1425,7 +1426,7 @@ li::marker {
     font-size: 2.4em;
     font-weight: 700;
     margin-bottom: 0.75em;
-    color: #f6d27a; /* warm golden heading to match gradient */
+    color: #e6c28b; /* warm golden heading to match gradient */
     letter-spacing: 1px;
 }
 
@@ -1437,7 +1438,7 @@ li::marker {
 }
 
 .about-section strong {
-    color: #ed593f; /* accent color from your gradient */
+    color: #00fff3; /* accent color from your gradient */
     font-weight: 600;
 }
 

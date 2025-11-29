@@ -16,6 +16,11 @@
       "title": "Photoshop",
       "video": "assets/Animations/ScrewManPhotoshop.mp4",
       "text": "Take a look at the 2D character parts I built and arranged in Photoshop."
+    },
+    {
+      "title": "3D Animations",
+      "video": "assets/Animations/3Danims.mp4",
+      "text": "Dive into my 3D animation work, where I combine AI‑generated animations with IK constraints and create my own using keyframes."
     }
   ]
 }
