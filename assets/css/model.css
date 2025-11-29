@@ -61,8 +61,9 @@
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: #67bab6;
     font-size: 1.2em;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,6 +72,7 @@
     z-index: 10;
     pointer-events: none;
     backface-visibility: hidden;
+    border-radius: 6px
 }
 
 /* Show overlay on hover */
@@ -88,13 +90,17 @@
 }
 
 .animation-card .image.featured::after {
-    content: "View Animations";
+     content: "View Animations";
+ }
+
+.modal-card .image.featured::after {
+    content: "View Modals";
 }
 
 .preview-video {
     width: 100%;
     border-radius: 6px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
+    border: 5px solid #67bab670;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optional depth */
 }
 
@@ -217,8 +223,9 @@ body.modal-open {
 }
 
 .modal-links a:hover {
-    color: #61b89e; /* accent color on hover */
-    background-color: #3a3a3a; /* brighten background on hover */
+    color: #303030; 
+    font-weight: bold;
+    background-color: #bbc1c1; /* brighten background on hover */
     transform: translateY(-2px); /* slight lift effect */
 }
 
@@ -252,7 +259,26 @@ body.modal-open {
     padding: 10px;
 }
 
+/* Special styling for modal title */
+.modal-title {
+    font-size: 1.8rem;       /* Larger text */
+    font-weight: bold;       /* Strong emphasis */
+    color: rgba(251, 203, 127, 0.7);          /* Dark slate color */
+    text-align: center;      /* Centered in modal */
+    margin-bottom: 1rem;     /* Space below */
+    letter-spacing: 1px;     /* Slight spacing for elegance */
+    text-transform: uppercase; /* Optional: all caps */
+}
+.animation-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
 .mechanics-heading {
+    color:  #ffffff;
     font-size: 1.6em;
     font-weight: 700;
     margin: 1em 0 0.5em;

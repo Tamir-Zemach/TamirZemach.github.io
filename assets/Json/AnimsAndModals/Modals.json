@@ -1,7 +1,7 @@
 ﻿{
   "title": "Modals",
   "description": "Exploring my 3D modeling process.",
-  "animations": [
+  "modals": [
     {
       "title": "Units & References",
       "video": "assets/Modals/Reference.mp4",

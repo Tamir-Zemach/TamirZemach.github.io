@@ -1031,6 +1031,7 @@ ul.actions li:first-child {
     margin-left: auto;
     margin-right: auto;
     backdrop-filter: blur(4px);
+    font-weight: 550;
 }
 
 .box.style1 h3 {
@@ -1145,7 +1146,7 @@ body {
     /*text-shadow: 0 1px 1px rgba(235, 222, 222 , 0.6); */
     background: transparent;
     color: inherit; /* inherits from body */
-    box-shadow: inset 0px 4px 8px rgba(0,0,0,0.15),
+    box-shadow: inset 0px 4px 8px rgb(199 215 199),
     inset 0px -4px 8px rgba(0,0,0,0.1)
     
 
