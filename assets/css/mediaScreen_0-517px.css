@@ -19,5 +19,15 @@
     .modal-links {
         gap: 15px !important;
     }
+    #nav a {
+        font-size: 0.8em;
+        padding: 0 0.5em;  /* tighter spacing */
+    }
+    .box.style1 {
+        max-width: 25em;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
 
 }

@@ -1157,6 +1157,9 @@ body {
 .wrapper:hover {
     background-position: right center;
 }
+.wrapper header h2 {
+    margin-bottom: 0.25em; /* or use padding-bottom if preferred */
+}
 
 /* Hero / Intro Section 
 .wrapper.style1 {

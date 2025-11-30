@@ -94,7 +94,7 @@
  }
 
 .modal-card .image.featured::after {
-    content: "View Modals";
+    content: "View Models";
 }
 
 .preview-video {
@@ -166,6 +166,7 @@ body.modal-open {
     font-size: 28px;
     cursor: pointer;
     color: #aaa;
+    padding: 10px;
 }
 
 .modal-close:hover {
@@ -265,7 +266,8 @@ body.modal-open {
     font-weight: bold;       /* Strong emphasis */
     color: rgba(255, 255, 255);          /* Dark slate color */
     text-align: center;      /* Centered in modal */
-    margin-bottom: 1rem;     /* Space below */
+    margin-bottom: 1rem;  
+    margin-top: 1em;/* Space below */
     letter-spacing: 1px;     /* Slight spacing for elegance */
     text-transform: uppercase; /* Optional: all caps */
 }

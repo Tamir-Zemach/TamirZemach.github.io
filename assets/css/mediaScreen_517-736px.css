@@ -387,7 +387,7 @@
     }
 
     .box.style1 {
-        max-width: 32em;
+        max-width: 35em;
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -525,5 +525,10 @@
     .about-section {
         max-width: 500px;
     }
+    #nav a {
+        font-size: 0.8em;
+        padding: 0 0.5em;  /* tighter spacing */
+    }
+
 
 }
