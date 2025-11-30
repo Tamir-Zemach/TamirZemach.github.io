@@ -294,6 +294,7 @@
 
     header > p {
         font-size: 1.25em;
+        margin-bottom: 0.5em;
     }
 
     footer {

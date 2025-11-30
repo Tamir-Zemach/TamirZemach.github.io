@@ -16,7 +16,7 @@
     cursor: pointer;
     width: 100%;
     max-width: 400px;
-    margin: 2em auto;
+    margin: 0.5em auto;
     z-index: 1;
 
     backdrop-filter: blur(6px); /* stronger glassy effect */
