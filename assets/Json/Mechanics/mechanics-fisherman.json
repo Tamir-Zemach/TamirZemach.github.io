@@ -2,7 +2,7 @@
   {
     "title": "Pickup & Drop",
     "video": "Videos/Fisherman/FishermanPickUp.mp4",
-    "text": "Allows the player to detect, pick up, and carry interactive objects, with visual highlights, camera adjustments, and smooth drop handling.",
+    "text": "Allows the player to <strong>detect</strong>, <strong>pick up</strong>, and <strong>carry interactive objects</strong>, with <strong>visual highlights</strong> and <strong>camera adjustments</strong>.",
     "snippets": [
       {
         "title": "PlayerPickupController.cs",
@@ -17,7 +17,7 @@
   {
     "title": "Color Reactive Wall",
     "video": "Videos/Fisherman/FishermanColorDissolve.mp4",
-    "text": "A dynamic barrier that materializes or dissolves based on specific lantern color combinations, with particle effects that visually reflect the active colors.",
+    "text": "A <strong>dynamic barrier</strong> that <strong>materializes</strong> or <strong>dissolves</strong> based on specific <strong>lantern color combinations</strong>.",
     "snippets": [
       {
         "title": "ColorReactiveWall.cs",

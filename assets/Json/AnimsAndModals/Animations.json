@@ -5,22 +5,22 @@
     {
       "title": "Character Animations",
       "video": "assets/Animations/ScrewManAnims.mp4",
-      "text": "Watch my characters come to life with smooth, playful animations."
+      "text": "Watch my <strong>characters</strong> come to life with <strong>smooth</strong>, <strong>playful animations</strong>."
     },
     {
       "title": "UI Animations",
       "video": "assets/Animations/UIAnimations.mp4",
-      "text": "See how I bring interfaces to life with clean, simple motion."
+      "text": "See how I bring <strong>interfaces</strong> to life with <strong>clean</strong>, <strong>simple motion</strong>."
     },
     {
       "title": "Photoshop",
       "video": "assets/Animations/ScrewManPhotoshop.mp4",
-      "text": "Take a look at the 2D character parts I built and arranged in Photoshop."
+      "text": "Take a look at the <strong>2D character parts</strong> I built and arranged in <strong>Photoshop</strong>."
     },
     {
       "title": "3D Animations",
       "video": "assets/Animations/3Danims.mp4",
-      "text": "Dive into my 3D animation work, where I combine AI‑generated animations with IK constraints and create my own using keyframes."
+      "text": "Dive into my <strong>3D animation</strong> work, combining <strong>AI‑generated animations</strong> with my own <strong>IK constraints</strong> and <strong>keyframes</strong>."
     }
   ]
 }

@@ -2,7 +2,7 @@
   {
     "title": "Upgrade Popup",
     "video": "Videos/COTA/COTAUpgradePopUp.mp4",
-    "text": "Displays a dynamic upgrade selection interface that pauses gameplay, retrieves eligible options based on rules and limits, and spawns randomized upgrade slots with smooth UI transitions.",
+    "text": "Displays a dynamic <strong>upgrade selection interface</strong> that <strong>pauses gameplay</strong>, retrieves <strong>eligible options</strong> based on rules and limits, and spawns <strong>randomized upgrade slots</strong> with smooth <strong>UI transitions</strong>.",
     "snippets": [
       {
         "title": "UpgradePopup.cs",
@@ -21,7 +21,7 @@
   {
     "title": "Unit Spawner",
     "video": "Videos/COTA/COTAUnitSpawner.mp4",
-    "text": "Handles the full unit deployment pipeline, from queuing and validating costs to timed spawning and initialization on lanes, ensuring smooth integration between UI, economy, and battlefield logic.",
+    "text": "Handles the full <strong>unit deployment pipeline</strong>, from <strong>queuing</strong> and <strong>validating costs</strong> to <strong>timed spawning</strong> and <strong>initialization on lanes</strong>, ensuring smooth integration between <strong>UI</strong>, <strong>economy</strong>, and <strong>battlefield logic</strong>.",
     "snippets": [
       {
         "title": "UnitSpawner.cs",
@@ -44,7 +44,7 @@
   {
     "title": "Money Flash",
     "video": "Videos/COTA/COTAMoneyFlash.mp4",
-    "text": "Provides responsive currency feedback by animating rising values on gain and flashing the UI red with scale and shake effects when funds are insufficient. Built on reusable utility classes (UIEffects, NumberRisingUtil) that can be applied across different UI elements for consistent, scalable feedback.",
+    "text": "Provides responsive <strong>currency feedback</strong> by <strong>animating rising values</strong> on gain and <strong>flashing the UI red</strong> with scale and shake effects when funds are insufficient. Built on reusable <strong>utility classes</strong> (UIEffects, NumberRisingUtil) that can be applied across different <strong>UI elements</strong> for consistent, scalable feedback.",
     "snippets": [
       {
         "title": "MoneyTextUiDisplay.cs",

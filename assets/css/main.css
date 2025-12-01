@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 @import url("fontawesome-all.min.css");
 
@@ -191,17 +191,20 @@ body.is-preload *:after {
     transition: none !important;
 }
 
-body,
-input,
-textarea,
-select {
-    font-family: 'Open Sans', sans-serif;
+/* Body text uses Assistant */
+body, input, textarea, select {
+    font-family: 'Heebo', sans-serif;
     line-height: 1.85em;
     color: #888;
     font-weight: 300;
     font-size: 13pt;
 }
 
+/* Headings use Heebo */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #3e3e3e;
+}
 a {
     -moz-transition: color .2s ease-in-out;
     -webkit-transition: color .2s ease-in-out;
@@ -1421,7 +1424,6 @@ li::marker {
     margin: 3em auto;
     max-width: 900px;
     text-align: center;
-    font-family: 'Poppins', 'Open Sans', sans-serif;
     padding: 3em 2em;
     background: rgba(28, 28, 28, 0.95); /* softer dark with slight transparency */
     backdrop-filter: blur(6px); /* glassy effect */
@@ -1484,7 +1486,6 @@ li::marker {
 
 
 .hero-title {
-    font-family: 'Poppins', 'Open Sans', sans-serif;
     font-size: 2.5em;
     text-align: center;
     line-height: 1.4em;

@@ -6,7 +6,7 @@
       "title": "ComponentCopierTool",
       "description": "Unity Editor Extension",
       "video": "assets/EditorTools/ComponentHelperTool/ComponentCopierTool1280x720.mp4",
-      "text": "Copy and manage components between GameObjects quickly while keeping structure intact.",
+      "text": "<strong>Copy</strong> and <strong>manage</strong> components between GameObjects quickly while keeping <strong>structure intact</strong>.",
       "snippets": [
         {
           "title": "ComponentCopierTool.cs",
@@ -18,7 +18,7 @@
       "title": "SceneReferenceTool",
       "description": "Unity Editor Extension",
       "video": "assets/EditorTools/Scene Reference/SceneReference.mp4",
-      "text": "A safer way to reference scenes with drag‑and‑drop support and synced paths.",
+      "text": "A safer way to <strong>reference scenes</strong> with <strong>drag‑and‑drop support</strong> and <strong>synced paths</strong>.",
       "snippets": [
         {
           "title": "SceneReference.cs",
@@ -34,7 +34,7 @@
       "title": "TagSelectorTool",
       "description": "Unity Editor Extension",
       "video": "assets/EditorTools/TagSelector/Tag Selector.mp4",
-      "text": "Select Unity tags from the Inspector dropdown to keep things error-free.",
+      "text": "Select <strong>Unity tags</strong> from the <strong>Inspector dropdown</strong> to keep things <strong>error‑free</strong>.",
       "snippets": [
         {
           "title": "TagSelectorAttribute.cs",

@@ -2,7 +2,7 @@
   {
     "title": "Dash Drill",
     "video": "Videos/ScrewMan/ScrewManDashJump.mp4",
-    "text": "Launches the player downward in a high speed burst, tunneling through the ground while ignoring obstacles, then erupting back out with force to continue movement.",
+    "text": "Launches the player downward in a <strong>high speed burst</strong>, <strong>tunneling through the ground</strong> while <strong>ignoring obstacles</strong>, then <strong>erupting back out with force</strong> to continue movement.",
     "snippets": [
       {
         "title": "DashFunctions.cs",
@@ -13,7 +13,7 @@
   {
     "title": "Camera Transition",
     "video": "Videos/ScrewMan/ScrewManCameraTransition.mp4",
-    "text": "Manages smooth transitions between the default and special zone cameras, adjusting framing based on player direction and adding shake effects for impact.",
+    "text": "Manages <strong>smooth transitions</strong> between the <strong>default</strong> and <strong>special zone cameras</strong>, <strong>adjusting framing</strong> based on <strong>player direction</strong> and adding <strong>shake effects</strong> for <strong>impact</strong>.",
     "snippets": [
       {
         "title": "CameraController.cs",
@@ -24,7 +24,7 @@
   {
     "title": "Ragdoll",
     "video": "Videos/ScrewMan/ScrewManRagdoll.mp4",
-    "text": "Replaces defeated enemies with a physics-driven ragdoll, applying random forces and spin for dynamic death animations before fading out.",
+    "text": "Replaces defeated enemies with a <strong>physics-driven ragdoll</strong>, applying <strong>random forces</strong> for <strong>dynamic death animations</strong>.",
     "snippets": [
       {
         "title": "Ragdoll.cs",
@@ -35,7 +35,7 @@
   {
     "title": "Static Turret",
     "video": "Videos/ScrewMan/ScrewManStaticTurret.mp4",
-    "text": "Implements a stationary enemy that continuously fires projectiles, reacts to player attacks with hit feedback, and transitions into a destroyed state when defeated.",
+    "text": "Implements a <strong>stationary enemy</strong> that continuously <strong>fires projectiles</strong>, reacts to player attacks with <strong>hit feedback</strong>, and transitions into a <strong>destroyed state</strong> when defeated.",
     "snippets": [
       {
         "title": "StaticTurret.cs",

@@ -5,17 +5,17 @@
     {
       "title": "Units & References",
       "video": "assets/Modals/Reference.mp4",
-      "text": "Showing the 3D models lined up with their reference designs."
+      "text": "Showing the <strong>3D models</strong> lined up with their <strong>reference designs</strong>."
     },
     {
       "title": "Uv",
       "video": "assets/Modals/Uv.mp4",
-      "text": "Fixing and cleaning up the UVs."
+      "text": "Fixing and cleaning up the <strong>UVs</strong>."
     },
     {
       "title": "Rigging",
       "video": "assets/Modals/Rigging.mp4",
-      "text": "Demonstrating the custom rig I built for the character."
+      "text": "Demonstrating the <strong>custom rig</strong> I built for the <strong>character</strong>."
     }
   ]
 }

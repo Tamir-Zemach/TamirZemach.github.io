@@ -288,7 +288,6 @@ body.modal-open {
 }
 
 .mechanic-title {
-    font-family: 'Oswald', sans-serif;
     font-size: 1.3em;
     font-weight: 700;
     margin-bottom: 0.3em;
@@ -328,6 +327,7 @@ body.modal-open {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Heebo', sans-serif;
 }
 
 .snippet-toggle:hover {
@@ -349,7 +349,6 @@ body.modal-open {
     background: #1c1c1c;
     padding: 10px;
     border-radius: 6px 6px 0 0;
-
     display: flex; /* enable flexbox */
     justify-content: center; /* center horizontally */
     gap: 12px; /* space between buttons */
@@ -369,7 +368,6 @@ body.modal-open {
     background: #222;
     color: #eee;
     border-radius: 0 0 6px 6px;
-    font-family: monospace;
     white-space: pre-wrap;
     padding: 0;
 
