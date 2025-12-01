@@ -175,6 +175,12 @@ body.modal-open {
 
 
 /* Media inside modal */
+/* Strong keyword styling inside project cards & modals */
+.project-card strong,
+#projectModal .modal-content strong {
+    color: #c5c5c5;           
+}
+
 #modalMedia video {
     width: 50%;
     /* shrink to 70% of modal width */
@@ -295,11 +301,15 @@ body.modal-open {
     text-align: center;
 }
 
-.mechanic-description {
+/* Unified description style for modals, animations, and tools */
+.mechanic-description,
+.modal-description,
+.animation-description {
     font-size: 1em;
     line-height: 1.5;
     margin-bottom: 0.5em;
-    color: #7e7e7e;
+    color: rgb(126, 126, 126);
+    font-weight: 500;
 }
 
 .mechanic-scripts-label {
